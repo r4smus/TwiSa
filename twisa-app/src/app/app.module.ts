@@ -4,13 +4,16 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
+import { DndModule } from 'ng2-dnd';
+
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    DndModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
