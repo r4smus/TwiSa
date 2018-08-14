@@ -1,14 +1,20 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<h4>Transfer custom data in Drag-and-Drop</h4>
+<h4>TwiSA Web-App</h4>
 <div class="row">
     <div class="col-sm-3">
         <div class="panel panel-success">
-            <div class="panel-heading">Available to drag</div>
+            <div class="panel-heading">Availible Attributes</div>
             <div class="panel-body">
-                <div class="panel panel-default" dnd-draggable [dragEnabled]="true" [dragData]="transferData">
+                <div class="panel panel-default">
                     <div class="panel-body">
-                        <div>Drag Me</div>
-                        <div>{{transferData | json}}</div>
+                        <ul class="attributes">
+                            <li *ngFor="let attribute of attributes" dnd-draggable [dragEnabled]="true" [dragData]="attribute">
+                                <div>----------------------</div>
+                                <span>Id: {{attribute.id}} </span>
+                                <span>Name: {{attribute.msg}}</span>
+                                <div>----------------------</div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -16,7 +22,7 @@
     </div>
     <div class="col-sm-3">
         <div dnd-droppable class="panel panel-info" (onDropSuccess)="transferDataSuccess($event)">
-            <div class="panel-heading">Place to drop (Items:{{receivedData.length}})</div>
+            <div class="panel-heading">Displayed data from the Tweets (Items:{{receivedData.length}})</div>
             <div class="panel-body">
                 <div [hidden]="!receivedData.length > 0" *ngFor="let data of receivedData">{{data | json}}</div>
             </div>
