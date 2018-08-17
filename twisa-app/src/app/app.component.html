@@ -9,10 +9,8 @@
                     <div class="panel-body">
                         <ul class="attributes">
                             <li *ngFor="let attribute of attributes" dnd-draggable [dragEnabled]="true" [dragData]="attribute">
-                                <div>----------------------</div>
-                                <span>Id: {{attribute.id}} </span>
-                                <span>Name: {{attribute.msg}}</span>
-                                <div>----------------------</div>
+                                <img src="{{attribute.image}}">
+                                <span>{{attribute.msg}}</span>
                             </li>
                         </ul>
                     </div>

@@ -1,0 +1,8 @@
+.attributes li {
+    list-style-type: none;
+    margin-bottom: 20px;
+}
+
+.attributes li img {
+    width: 50px;
+}
