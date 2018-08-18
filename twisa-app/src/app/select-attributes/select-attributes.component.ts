@@ -11,39 +11,38 @@ export class SelectAttributesComponent {
     droppedSelectAtts: Array<SelectAttribute> = [];
 
     constructor() {
-        this.availableSelectAtts.push(new SelectAttribute('Blue Shoes', 3, 35));
-        this.availableSelectAtts.push(new SelectAttribute('Good Jacket', 1, 90));
-        this.availableSelectAtts.push(new SelectAttribute('Red Shirt', 5, 12));
-        this.availableSelectAtts.push(new SelectAttribute('Blue Jeans', 4, 60));
+        this.availableSelectAtts.push(new SelectAttribute(1, 'Map', 'assets/images/Maps-icon.png'));
+        this.availableSelectAtts.push(new SelectAttribute(2, 'Tweet-Text', 'assets/images/tweet-text.png'));
+        this.availableSelectAtts.push(new SelectAttribute(3, 'Tweet-Source', 'assets/images/datasource.png'));
     }
 
     orderedProduct($event: any) {
         let orderedProduct: SelectAttribute = $event.dragData;
-        orderedProduct.quantity--;
+        // orderedProduct.quantity--;
     }
 
-    addToBasket($event: any) {
-        let newProduct: SelectAttribute = $event.dragData;
-        for (let indx in this.droppedSelectAtts) {
-            let product: SelectAttribute = this.droppedSelectAtts[indx];
-            if (product.name === newProduct.name) {
-                product.quantity++;
-                return;
-            }
-        }
-        this.droppedSelectAtts.push(new SelectAttribute(newProduct.name, 1, newProduct.cost));
+    addToDroppedSelectAtts($event: any) {
+        let newAttribute: SelectAttribute = $event.dragData;
+        // for (let indx in this.droppedSelectAtts) {
+            // let product: SelectAttribute = this.droppedSelectAtts[indx];
+            // if (product.name === newAttribute.name) {
+                // product.quantity++;
+               // return;
+            // }
+        // }
+        this.droppedSelectAtts.push(newAttribute);
         this.droppedSelectAtts.sort((a: SelectAttribute, b: SelectAttribute) => {
             return a.name.localeCompare(b.name);
         });
     }
 
-    totalCost(): number {
-        let cost: number = 0;
-        for (let indx in this.droppedSelectAtts) {
-            let product: SelectAttribute = this.droppedSelectAtts[indx];
-            cost += (product.cost * product.quantity);
-        }
-        return cost;
-    }
+    // totalCost(): number {
+    //     let cost: number = 0;
+    //     for (let indx in this.droppedSelectAtts) {
+    //         let product: SelectAttribute = this.droppedSelectAtts[indx];
+    //         cost += (product.cost * product.quantity);
+    //     }
+    //     return cost;
+    // }
 }
 

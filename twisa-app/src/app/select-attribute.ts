@@ -1,5 +1,5 @@
 export class SelectAttribute {
 
-    constructor(public name: string, public quantity: number, public cost: number) {}
+    constructor(public id: number, public name: string, public imagePath: string) {}
 
 }

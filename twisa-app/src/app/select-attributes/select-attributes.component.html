@@ -3,27 +3,28 @@
 
     <div class="col-sm-3">
         <div class="panel panel-success">
-            <div class="panel-heading">Available products</div>
+            <div class="panel-heading">Available Attributes</div>
             <div class="panel-body">
-                <div *ngFor="let attribute of availableSelectAtts" class="panel panel-default"
-                    dnd-draggable [dragEnabled]="attribute.quantity>0" [dragData]="attribute" (onDragSuccess)="orderedProduct($event)" [dropZones]="['demo1']">
-                    <div class="panel-body">
-                        <div [hidden]="attribute.quantity===0">{{attribute.name}} - \${{attribute.cost}}<br>(available: {{attribute.quantity}})</div>
-                        <div [hidden]="attribute.quantity>0"><del>{{attribute.name}}</del><br>(NOT available)</div>
-                    </div>
-                </div>
+                <ul *ngFor="let attribute of availableSelectAtts" class="panel panel-default"
+                    dnd-draggable [dragEnabled]="true" [dragData]="attribute" (onDragSuccess)="orderedProduct($event)" [dropZones]="['demo1']">
+                    <li>
+                        <img src="{{attribute.imagePath}}">
+                        <span>{{attribute.name}}</span>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
     <div class="col-sm-3">
-        <div dnd-droppable (onDropSuccess)="addToBasket($event)" [dropZones]="['demo1']" class="panel panel-info">
-            <div class="panel-heading">Shopping Basket<br>(to pay: \${{totalCost()}})</div>
+        <div dnd-droppable (onDropSuccess)="addToDroppedSelectAtts($event)" [dropZones]="['demo1']" class="panel panel-info">
+            <div class="panel-heading">Diplayed data from the Tweets</div>
             <div class="panel-body">
-                <div *ngFor="let attribute of droppedSelectAtts" class="panel panel-default">
-                    <div class="panel-body">
-                    {{attribute.name}}<br>(ordered: {{attribute.quantity}}<br>cost: \${{attribute.cost * attribute.quantity}})
-                    </div>
-                </div>
+                <ul *ngFor="let attribute of droppedSelectAtts" class="panel panel-default">
+                    <li>
+                        <img src="{{attribute.imagePath}}">
+                        <span>{{attribute.name}}</span>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>

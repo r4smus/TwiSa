@@ -1,0 +1,8 @@
+li {
+    list-style-type: none;
+    padding: 20px;
+}
+
+li img {
+    width: 50px;
+}
