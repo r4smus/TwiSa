@@ -5,11 +5,13 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 import { DndModule } from 'ng2-dnd';
+import { SelectAttributesComponent } from './select-attributes/select-attributes.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SelectAttributesComponent
   ],
   imports: [
     BrowserModule,
