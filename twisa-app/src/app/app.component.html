@@ -1,30 +1,3 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <h4>TwiSA Web-App</h4>
-<div class="row">
-    <div class="col-sm-3">
-        <div class="panel panel-success">
-            <div class="panel-heading">Availible Attributes</div>
-            <div class="panel-body">
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <ul class="attributes">
-                            <li *ngFor="let attribute of attributes" dnd-draggable [dragEnabled]="true" [dragData]="attribute">
-                                <img src="{{attribute.image}}">
-                                <span>{{attribute.msg}}</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-3">
-        <div dnd-droppable class="panel panel-info" (onDropSuccess)="transferDataSuccess($event)">
-            <div class="panel-heading">Displayed data from the Tweets (Items:{{receivedData.length}})</div>
-            <div class="panel-body">
-                <div [hidden]="!receivedData.length > 0" *ngFor="let data of receivedData">{{data | json}}</div>
-            </div>
-        </div>
-    </div>
-</div>
 <app-select-attributes></app-select-attributes>
