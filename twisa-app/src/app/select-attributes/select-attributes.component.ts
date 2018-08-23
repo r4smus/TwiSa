@@ -16,33 +16,16 @@ export class SelectAttributesComponent {
         this.availableSelectAtts.push(new SelectAttribute(3, 'Tweet-Source', 'assets/images/datasource.png'));
     }
 
-    orderedProduct($event: any) {
-        let orderedProduct: SelectAttribute = $event.dragData;
-        // orderedProduct.quantity--;
-    }
-
     addToDroppedSelectAtts($event: any) {
         let newAttribute: SelectAttribute = $event.dragData;
-        // for (let indx in this.droppedSelectAtts) {
-            // let product: SelectAttribute = this.droppedSelectAtts[indx];
-            // if (product.name === newAttribute.name) {
-                // product.quantity++;
-               // return;
-            // }
-        // }
         this.droppedSelectAtts.push(newAttribute);
         this.droppedSelectAtts.sort((a: SelectAttribute, b: SelectAttribute) => {
             return a.name.localeCompare(b.name);
         });
     }
 
-    // totalCost(): number {
-    //     let cost: number = 0;
-    //     for (let indx in this.droppedSelectAtts) {
-    //         let product: SelectAttribute = this.droppedSelectAtts[indx];
-    //         cost += (product.cost * product.quantity);
-    //     }
-    //     return cost;
-    // }
+    alreadyDraggedAndDropped(selectAttribute: SelectAttribute): boolean {
+        return ! this.droppedSelectAtts.includes(selectAttribute);
+    }
 }
 
