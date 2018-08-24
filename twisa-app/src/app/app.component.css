@@ -1,4 +1,5 @@
 /* HEADER */
+
 header {
     width: 100%;
     max-width: 740px;
@@ -7,22 +8,6 @@ header {
     text-align: center;
 }
 
-/* MAIN */
-#main {
-    width: 100%;
-    max-width: 740px;
-    margin: 0 auto;
-    margin-top: 18px;
-}
-
-.attributes li {
-    list-style-type: none;
-    margin-bottom: 20px;
-}
-
-.attributes li img {
-    width: 50px;
-}
 
 /* NAVBAR */
 
@@ -48,6 +33,7 @@ nav a {
 nav a:hover {
     cursor: pointer;
 }
+
 
 /* FOOTER */
 

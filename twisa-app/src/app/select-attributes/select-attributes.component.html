@@ -1,11 +1,10 @@
-<div class="row">
+<div class="main">
 
     <div class="col-sm-3">
         <div class="panel panel-success">
             <div class="panel-heading">Available Attributes</div>
             <div class="panel-body">
-                <ul *ngFor="let attribute of availableSelectAtts" class="panel panel-default"
-                    dnd-draggable [dragEnabled]="alreadyDraggedAndDropped(attribute)" [dragData]="attribute" [dropZones]="['demo1']">
+                <ul *ngFor="let attribute of availableSelectAtts" class="panel panel-default" dnd-draggable [dragEnabled]="alreadyDraggedAndDropped(attribute)" [dragData]="attribute" [dropZones]="['demo1']">
                     <li>
                         <img src="{{attribute.imagePath}}">
                         <span>{{attribute.name}}</span>

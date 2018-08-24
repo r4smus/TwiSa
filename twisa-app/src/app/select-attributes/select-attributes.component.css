@@ -6,3 +6,8 @@ li {
 li img {
     width: 50px;
 }
+
+.main {
+    display: flex;
+    justify-content: center;
+}
