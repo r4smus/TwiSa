@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SelectAttributesComponent } from './select-attributes/select-attributes.component';
 import { ConditionsComponent } from './conditions/conditions.component';
+import { ResultsComponent } from './results/results.component';
 
 
 
@@ -19,6 +20,10 @@ const routes: Routes = [
     {
         path: 'conditions',
         component: ConditionsComponent,
+    },
+    {
+        path: 'results',
+        component: ResultsComponent,
     }
 ];
 

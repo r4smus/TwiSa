@@ -9,13 +9,15 @@ import { AppRoutingModule } from './app-routing-module';
 import { DndModule } from 'ng2-dnd';
 import { SelectAttributesComponent } from './select-attributes/select-attributes.component';
 import { ConditionsComponent } from './conditions/conditions.component';
+import { ResultsComponent } from './results/results.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     SelectAttributesComponent,
-    ConditionsComponent
+    ConditionsComponent,
+    ResultsComponent
   ],
   imports: [
     BrowserModule,
