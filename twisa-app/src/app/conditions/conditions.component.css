@@ -1,0 +1,8 @@
+.form-group img {
+    width: 50px;
+    margin-right: 20px;
+}
+
+.form-group img:hover {
+    cursor: pointer;
+}
