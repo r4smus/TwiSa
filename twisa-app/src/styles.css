@@ -12,18 +12,31 @@ header {
 }
 
 
+/* BODY */
+
+h3 {
+    text-align: center;
+    margin-top: 70px;
+    margin-bottom: 40px;
+}
+
+.centerRow {
+    display: flex;
+    justify-content: center;
+}
+
+
 /* NAVBAR */
 
 nav ul {
     padding: 0 !important;
     display: flex;
-    margin-top: 0;
+    margin-top: 70px;
 }
 
 nav li {
-    flex-basis: 0;
-    flex-grow: 1;
     list-style-type: none;
+    width: 200px;
 }
 
 nav a {
@@ -49,7 +62,7 @@ footer {
 
 footer ul {
     padding: 0 !important;
-    background: #49a0ae;
+    background: #b2d3f1;
     display: flex;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
     border-radius: 2px;
@@ -65,7 +78,7 @@ footer li {
 footer a {
     text-align: center;
     padding: 7px 0;
-    color: #eee;
+    color: rgb(0, 0, 0);
     display: block;
     text-decoration: none;
     font-size: x-small;

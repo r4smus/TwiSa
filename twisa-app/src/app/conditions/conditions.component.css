@@ -1,8 +1,16 @@
-.form-group img {
+img {
     width: 50px;
     margin-right: 20px;
 }
 
-.form-group img:hover {
+img:hover {
     cursor: pointer;
+}
+
+.inputCol {
+    max-width: 400px;
+}
+
+.rowOffset {
+    margin-bottom: 20px;
 }
