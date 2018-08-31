@@ -1,5 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 
+body {
+    background: #b2d3f1;
+}
+
 
 /* HEADER */
 
@@ -14,10 +18,15 @@ header {
 
 /* BODY */
 
+h1 {
+    color: white;
+}
+
 h3 {
     text-align: center;
     margin-top: 70px;
     margin-bottom: 40px;
+    color: white;
 }
 
 .centerRow {
@@ -62,8 +71,8 @@ footer {
 
 footer ul {
     padding: 0 !important;
-    background: #b2d3f1;
     display: flex;
+    background: white;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
     border-radius: 2px;
     margin-top: 0;
