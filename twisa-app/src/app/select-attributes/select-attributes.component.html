@@ -1,10 +1,10 @@
 <h3>Select Attributes</h3>
-<div class="centerRow">
-    <div class="col-sm-2">
+<div class="row centerRow">
+    <div class="col-sm-3">
         <div class="panel panel-success">
-            <div class="panel-heading">Available Attributes</div>
-            <div class="panel-body">
-                <ul *ngFor="let attribute of availableSelectAtts" class="panel panel-default selectAttribute" dnd-draggable [dragEnabled]="alreadyDraggedAndDropped(attribute)" [dragData]="attribute" [dropZones]="['demo1']">
+            <div class="panel-heading headingStyle">Available Attributes</div>
+            <div class="panel-body attributeBox">
+                <ul *ngFor="let attribute of availableSelectAtts" class="panel panel-default" dnd-draggable [dragEnabled]="alreadyDraggedAndDropped(attribute)" [dragData]="attribute" [dropZones]="['demo1']">
                     <li>
                         <img src="{{attribute.imagePath}}">
                         <span>{{attribute.name}}</span>
@@ -13,11 +13,11 @@
             </div>
         </div>
     </div>
-    <div class="col-sm-2">
+    <div class="col-sm-3">
         <div dnd-droppable (onDropSuccess)="addToDroppedSelectAtts($event)" [dropZones]="['demo1']" class="panel panel-info">
-            <div class="panel-heading">Diplayed data from the Tweets</div>
-            <div class="panel-body">
-                <ul *ngFor="let attribute of droppedSelectAtts" class="panel panel-default selectAttribute">
+            <div class="panel-heading headingStyle">Selected Attributes</div>
+            <div class="panel-body attributeBox">
+                <ul *ngFor="let attribute of droppedSelectAtts" class="panel panel-default">
                     <li>
                         <img src="{{attribute.imagePath}}">
                         <span>{{attribute.name}}</span>

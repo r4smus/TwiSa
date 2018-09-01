@@ -7,5 +7,20 @@ img {
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
     border-radius: 2px;
     padding: 20px;
+    background: #F0B775;
+}
+
+.rowTwitterItem {
     background: white;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.value-entry img {
+    width: 30px;
+}
+
+.label-entry {
+    font-weight: bold;
 }
