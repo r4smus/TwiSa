@@ -1,38 +1,42 @@
 <h3>Results</h3>
 <div class="centerRow">
-    <div class="container twitterItem">
-        <div class="row rowTwitterItem">
-            <div class="col-sm-1">
-                <img src="http://pbs.twimg.com/profile_images/757906593/avatar_100x100_normal.jpg">
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let tweet of tweets">
+            <div class="container twitterItem">
+                <div class="row rowTwitterItem">
+                    <div class="col-sm-1">
+                        <img src="http://pbs.twimg.com/profile_images/757906593/avatar_100x100_normal.jpg">
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="label-entry">Name:</div>
+                        <div class="label-entry">User Language:</div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="value-entry">Hans Wurst</div>
+                        <div class="value-entry"><img src="assets/images/flags/flag_germany.png"></div>
+                    </div>
+                </div>
+                <div class="row rowTwitterItem">
+                    <div class="col-sm-1">
+                        <img src="assets/images/tweet-text.png">
+                    </div>
+                    <div class="col-sm-11">
+                        <div class="section-entry">{{tweet.text}}</div>
+                    </div>
+                </div>
+                <div class="row rowTwitterItem">
+                    <div class="col-sm-3">
+                        <div class="label-entry">Language:</div>
+                        <div class="label-entry">Source:</div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="value-entry">{{tweet.lang}}</div>
+                        <div class="value-entry"></div>
+                    </div>
+                </div>
             </div>
-            <div class="col-sm-3">
-                <div class="label-entry">Name:</div>
-                <div class="label-entry">User Language:</div>
-            </div>
-            <div class="col-sm-8">
-                <div class="value-entry">Hans Wurst</div>
-                <div class="value-entry"><img src="assets/images/flags/flag_germany.png"></div>
-            </div>
-        </div>
-        <div class="row rowTwitterItem">
-            <div class="col-sm-1">
-                <img src="assets/images/tweet-text.png">
-            </div>
-            <div class="col-sm-11">
-                <div class="section-entry">Dapibus ac facilisis in Dapibus ac facilisis inDapibus ac facilisis inDapibus ac facilisis inDapibus ac facilisis inDapibus ac facilisis in</div>
-            </div>
-        </div>
-        <div class="row rowTwitterItem">
-            <div class="col-sm-3">
-                <div class="label-entry">Hashtags:</div>
-                <div class="label-entry">Source:</div>
-            </div>
-            <div class="col-sm-8">
-                <div class="value-entry">#WM, #Fußball</div>
-                <div class="value-entry">Android</div>
-            </div>
-        </div>
-    </div>
+        </li>
+    </ul>
 </div>
 <nav class="centerRow">
     <ul>

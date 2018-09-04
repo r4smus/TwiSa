@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TwisaApiService } from '../twisa-api.service';
+import { Tweet } from '../tweet';
 
 @Component({
   selector: 'app-results',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResultsComponent implements OnInit {
 
-  constructor() { }
+  tweets: Tweet[];
+
+  constructor(private twisaApiService: TwisaApiService,) { }
 
   ngOnInit() {
+    this.getTweets();
+  }
+
+  getTweets(): void {
+    this.twisaApiService.getTweets()
+      .then(tweets => this.tweets = tweets);
   }
 
 }
