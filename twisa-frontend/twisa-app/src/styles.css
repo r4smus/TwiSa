@@ -34,6 +34,21 @@ h3 {
     justify-content: center;
 }
 
+.value-entry {
+    height: 30px;
+    line-height: 30px;
+}
+.value-entry img {
+    width: 30px;
+    
+}
+
+.label-entry {
+    font-weight: bold;
+    height: 30px;
+    line-height: 30px;
+}
+
 
 /* NAVBAR */
 
