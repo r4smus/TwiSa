@@ -70,7 +70,6 @@ public class TwisaBackendController {
     }
     
     private void initTestData1() {
-    	//User1
     	User user1 = new User(1,"Max Mustermann",123,"http://pbs.twimg.com/profile_images/1009276895416877056/RBFyvqp8_normal.jpg");
     	User user2 = new User(2,"Maria Gonzales",9999,"http://pbs.twimg.com/profile_images/1009976350961266688/R0g8bJji_normal.jpg");
     	User user3 = new User(3,"Daniel Baier",7215,"http://pbs.twimg.com/profile_images/958440068569419776/ullmyXUd_normal.jpg");
