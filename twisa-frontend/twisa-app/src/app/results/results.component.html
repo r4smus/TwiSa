@@ -5,15 +5,15 @@
             <div class="container twitterItem">
                 <div class="row rowTwitterItem">
                     <div class="col-sm-1">
-                        <img src="http://pbs.twimg.com/profile_images/757906593/avatar_100x100_normal.jpg">
+                        <img src="{{tweet.user.profile_image_url}}">
                     </div>
                     <div class="col-sm-3">
                         <div class="label-entry">Name:</div>
-                        <div class="label-entry">User Language:</div>
+                        <div class="label-entry">Follower:</div>
                     </div>
                     <div class="col-sm-8">
-                        <div class="value-entry">Hans Wurst</div>
-                        <div class="value-entry"><img src="assets/images/flags/flag_germany.png"></div>
+                        <div class="value-entry">{{tweet.user.name}}</div>
+                        <div class="value-entry">{{tweet.user.follower_count}}</div>
                     </div>
                 </div>
                 <div class="row rowTwitterItem">
@@ -30,7 +30,7 @@
                         <div class="label-entry">Source:</div>
                     </div>
                     <div class="col-sm-8">
-                        <div class="value-entry">{{tweet.lang}}</div>
+                        <div class="value-entry"><img src="{{getFlagPath(tweet.lang)}}"></div>
                         <div class="value-entry"></div>
                     </div>
                 </div>

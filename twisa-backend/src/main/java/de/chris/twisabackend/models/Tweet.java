@@ -1,8 +1,10 @@
 package de.chris.twisabackend.models;
 
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -20,6 +22,28 @@ public class Tweet {
 	@NotNull
 	private String lang;
 	
+	@OneToOne(
+	        cascade = CascadeType.ALL, 
+	        orphanRemoval = true
+	 )
+	private User user;
+	
+	
+	public Tweet() {
+		
+	}
+	
+	public Tweet(int id, String text, String lang, User user) {
+		this.id = id;
+		this.text = text;
+		this.lang = lang;
+		this.user = user;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
 	public int getId() {
 		return id;
 	}
