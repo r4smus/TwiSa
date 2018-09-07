@@ -17,7 +17,7 @@ export class SelectAttributesComponent {
     }
 
     addToDroppedSelectAtts($event: any) {
-        let newAttribute: SelectAttribute = $event.dragData;
+        const newAttribute: SelectAttribute = $event.dragData;
         this.droppedSelectAtts.push(newAttribute);
         this.droppedSelectAtts.sort((a: SelectAttribute, b: SelectAttribute) => {
             return a.name.localeCompare(b.name);

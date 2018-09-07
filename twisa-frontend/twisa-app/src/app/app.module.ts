@@ -13,6 +13,7 @@ import { ResultsComponent } from './results/results.component';
 import { TwisaApiService } from './twisa-api.service';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
+import { FormDataService } from './data/form-data.service';
 
 
 @NgModule({
@@ -29,7 +30,7 @@ import { FormsModule } from '@angular/forms';
     HttpModule,
     FormsModule
   ],
-  providers: [TwisaApiService],
+  providers: [TwisaApiService, FormDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
