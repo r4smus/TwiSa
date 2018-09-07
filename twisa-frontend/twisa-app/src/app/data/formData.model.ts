@@ -1,16 +1,10 @@
+import { SelectAttribute } from '../select-attribute';
 
 export class FormData {
-    tweetTextselected = false;
-    mapSelected = false;
-    tweetSourceSelected = false;
+    selectedAttributes: Array<SelectAttribute> = [];
     tweetLanguage = '';
 }
 
-export class SelectAttributes {
-    tweetTextselected: boolean;
-    mapSelected: boolean;
-    tweetSourceSelected: boolean;
-}
 
 export class Conditions {
     tweetLanguage = '';

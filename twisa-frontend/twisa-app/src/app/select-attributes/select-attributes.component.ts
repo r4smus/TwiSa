@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SelectAttribute } from '../select-attribute';
+import { FormDataService } from '../data/form-data.service';
 
 @Component({
     selector: 'app-select-attributes',
@@ -10,7 +11,7 @@ export class SelectAttributesComponent {
     availableSelectAtts: Array<SelectAttribute> = [];
     droppedSelectAtts: Array<SelectAttribute> = [];
 
-    constructor() {
+    constructor(private formDataService: FormDataService) {
         this.availableSelectAtts.push(new SelectAttribute(1, 'Map', 'assets/images/Maps-icon.png'));
         this.availableSelectAtts.push(new SelectAttribute(2, 'Tweet-Text', 'assets/images/tweet-text.png'));
         this.availableSelectAtts.push(new SelectAttribute(3, 'Tweet-Source', 'assets/images/datasource.png'));
@@ -26,6 +27,11 @@ export class SelectAttributesComponent {
 
     alreadyDraggedAndDropped(selectAttribute: SelectAttribute): boolean {
         return ! this.droppedSelectAtts.includes(selectAttribute);
+    }
+
+    save(): void {
+        this.formDataService.setSelectAttributes(this.droppedSelectAtts);
+        console.log('save()-method called');
     }
 }
 

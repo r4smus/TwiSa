@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { FormData, SelectAttributes, Conditions } from './formData.model';
+import { FormData, Conditions } from './formData.model';
+import { SelectAttribute } from '../select-attribute';
 
 @Injectable()
 export class FormDataService {
@@ -7,20 +8,13 @@ export class FormDataService {
   private formData: FormData = new FormData();
 
 
-  getSelectAttributes(): SelectAttributes {
+  getSelectAttributes(): Array<SelectAttribute> {
     // Return the selected attributes from the first wizard page
-    const selectAttributes: SelectAttributes = {
-      mapSelected: this.formData.mapSelected,
-      tweetTextselected: this.formData.tweetTextselected,
-      tweetSourceSelected: this.formData.tweetSourceSelected
-    };
-    return selectAttributes;
+    return this.formData.selectedAttributes;
   }
 
-  setSelectAttributes(data: SelectAttributes) {
-    this.formData.mapSelected = data.mapSelected;
-    this.formData.tweetTextselected = data.tweetTextselected;
-    this.formData.tweetSourceSelected = data.tweetSourceSelected;
+  setSelectAttributes(data: Array<SelectAttribute>) {
+    this.formData.selectedAttributes = data;
   }
 
   getConditions(): Conditions {

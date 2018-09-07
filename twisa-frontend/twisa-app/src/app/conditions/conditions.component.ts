@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormDataService } from '../data/form-data.service';
 
 @Component({
   selector: 'app-conditions',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConditionsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private formDataService: FormDataService) { }
 
   ngOnInit() {
+    console.log(this.formDataService.getSelectAttributes());
   }
 
 }
