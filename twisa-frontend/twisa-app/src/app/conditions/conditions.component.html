@@ -7,10 +7,10 @@
         </div>
         <div class="col-sm-6">
             <div class="value-entry rowOffset">
-                <img src="assets/images/flags/flag_uk.png">
-                <img src="assets/images/flags/flag_germany.png">
-                <img src="assets/images/flags/flag_spain.png">
-                <img src="assets/images/flags/flag_russia.png">
+                <img [ngClass]="status1 ? 'languageSelected' : 'selectLanguage'" src="assets/images/flags/flag_uk.png" (click)="addLanguage('en');status1=!status1">
+                <img [ngClass]="status2 ? 'languageSelected' : 'selectLanguage'" src="assets/images/flags/flag_germany.png" (click)="addLanguage('de');status2=!status2">
+                <img [ngClass]="status3 ? 'languageSelected' : 'selectLanguage'" src="assets/images/flags/flag_spain.png" (click)="addLanguage('es');status3=!status3">
+                <img [ngClass]="status4 ? 'languageSelected' : 'selectLanguage'" src="assets/images/flags/flag_russia.png" (click)="addLanguage('ru');status4=!status4">
             </div>
             <div class="value-entry rowOffset">
                 <div class="inputCol">
@@ -28,7 +28,7 @@
             </a>
         </li>
         <li>
-            <a routerLink="/results" routerLinkActive="active">
+            <a routerLink="/results" routerLinkActive="active" (click)="save()">
                 <img src="assets/arrows/icons8-right-50.png">
             </a>
         </li>

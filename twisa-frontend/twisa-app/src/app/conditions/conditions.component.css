@@ -1,5 +1,10 @@
-img:hover {
+.selectLanguage {
+    margin-right: 20px;
+}
+
+.selectLanguage:hover {
     cursor: pointer;
+    background: green;
 }
 
 .inputCol {
@@ -12,4 +17,13 @@ img:hover {
 
 .conditionsBox {
     max-width: 500px;
+}
+
+.languageSelected {
+    background: green;
+    margin-right: 20px;
+}
+
+.languageSelected:hover {
+    cursor: pointer;
 }

@@ -19,12 +19,12 @@ export class FormDataService {
 
   getConditions(): Conditions {
     const conditions: Conditions = {
-      tweetLanguage: this.formData.tweetLanguage
+      tweetLanguages: this.formData.tweetLanguages
     };
     return conditions;
   }
 
   setConditions(data: Conditions) {
-    this.formData.tweetLanguage = data.tweetLanguage;
+    this.formData.tweetLanguages = data.tweetLanguages;
   }
 }

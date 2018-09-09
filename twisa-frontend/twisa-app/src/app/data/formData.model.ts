@@ -2,10 +2,10 @@ import { SelectAttribute } from '../select-attribute';
 
 export class FormData {
     selectedAttributes: Array<SelectAttribute> = [];
-    tweetLanguage = '';
+    tweetLanguages: Array<string> = [];
 }
 
 
 export class Conditions {
-    tweetLanguage = '';
+    tweetLanguages: Array<string> = [];
 }
