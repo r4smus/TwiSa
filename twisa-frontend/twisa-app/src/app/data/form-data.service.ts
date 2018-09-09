@@ -27,4 +27,9 @@ export class FormDataService {
   setConditions(data: Conditions) {
     this.formData.tweetLanguages = data.tweetLanguages;
   }
+
+  getFormData(): FormData {
+    // Return the entire Form Data
+    return this.formData;
+  }
 }
