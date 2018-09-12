@@ -14,6 +14,8 @@ import { TwisaApiService } from './twisa-api.service';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { FormDataService } from './data/form-data.service';
+import { ResultsWithMapComponent } from './results-with-map/results-with-map.component';
+import { AgmCoreModule} from '@agm/core';
 
 
 @NgModule({
@@ -21,14 +23,18 @@ import { FormDataService } from './data/form-data.service';
     AppComponent,
     SelectAttributesComponent,
     ConditionsComponent,
-    ResultsComponent
+    ResultsComponent,
+    ResultsWithMapComponent
   ],
   imports: [
     BrowserModule,
     DndModule.forRoot(),
     AppRoutingModule,
     HttpModule,
-    FormsModule
+    FormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyA3UAF3Lhv-VoF29P4FhBgklVkc4VLD0vU'
+    })
   ],
   providers: [TwisaApiService, FormDataService],
   bootstrap: [AppComponent]
