@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, AfterContentInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { TwisaApiService } from '../twisa-api.service';
 import { Tweet } from '../tweet';
 import { FormDataService } from '../data/form-data.service';
@@ -9,7 +9,7 @@ import { FormData } from '../data/formData.model';
   templateUrl: './results.component.html',
   styleUrls: ['./results.component.css']
 })
-export class ResultsComponent implements OnInit, AfterContentInit {
+export class ResultsComponent implements OnInit {
 
   tweets: Tweet[];
   @Input() formData: FormData;
@@ -22,17 +22,10 @@ export class ResultsComponent implements OnInit, AfterContentInit {
     console.log(this.formData);
   }
 
-  ngAfterContentInit() {
-    this.tweets = this.tweets.filter(tweet => this.formData.tweetLanguages.includes(tweet.lang));
-  }
 
   getTweets(): void {
     this.twisaApiService.getTweets()
-      .then(tweets => this.tweets = tweets);
-  }
-
-  loadTweets(): void {
-      this.tweets = this.tweets.filter(tweet => this.formData.tweetLanguages.includes(tweet.lang));
+      .then(tweets => this.tweets = tweets.filter(tweet => this.formData.tweetLanguages.includes(tweet.lang)));
   }
 
   public getFlagPath(lang: string): string {
