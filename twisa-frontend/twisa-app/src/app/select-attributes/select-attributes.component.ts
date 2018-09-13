@@ -12,9 +12,9 @@ export class SelectAttributesComponent {
     droppedSelectAtts: Array<SelectAttribute> = [];
 
     constructor(private formDataService: FormDataService) {
-        this.availableSelectAtts.push(new SelectAttribute(1, 'Map', 'assets/images/Maps-icon.png'));
-        this.availableSelectAtts.push(new SelectAttribute(2, 'Tweet-Text', 'assets/images/tweet-text.png'));
-        this.availableSelectAtts.push(new SelectAttribute(3, 'Tweet-Source', 'assets/images/datasource.png'));
+        this.availableSelectAtts.push(SelectAttribute.Map);
+        this.availableSelectAtts.push(SelectAttribute.TweetText);
+        this.availableSelectAtts.push(SelectAttribute.TweetSource);
     }
 
     addToDroppedSelectAtts($event: any) {
