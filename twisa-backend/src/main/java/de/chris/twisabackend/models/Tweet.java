@@ -28,16 +28,22 @@ public class Tweet {
 	 )
 	private User user;
 	
+	private float latitude;
+	
+	private float longitude;
+	
 	
 	public Tweet() {
 		
 	}
 	
-	public Tweet(int id, String text, String lang, User user) {
+	public Tweet(int id, String text, String lang, User user, float latitude, float longitude) {
 		this.id = id;
 		this.text = text;
 		this.lang = lang;
 		this.user = user;
+		this.latitude = latitude;
+		this.longitude = longitude;
 	}
 
 	public User getUser() {
@@ -66,6 +72,22 @@ public class Tweet {
 
 	public void setLang(String lang) {
 		this.lang = lang;
+	}
+
+	public float getLatitude() {
+		return latitude;
+	}
+
+	public void setLatitude(float latitude) {
+		this.latitude = latitude;
+	}
+
+	public float getLongitude() {
+		return longitude;
+	}
+
+	public void setLongitude(float longitude) {
+		this.longitude = longitude;
 	}
 	
 }

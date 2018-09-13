@@ -2,10 +2,7 @@
 <!-- this creates a google map on the page with the given lat/lng from -->
 <!-- the component as the initial center of the map: -->
 <agm-map [latitude]="lat" [longitude]="lng">
-    <agm-marker [latitude]="lat" [longitude]="lng">
+    <agm-marker [latitude]="tweet.latitude" [longitude]="tweet.longitude" *ngFor="let tweet of tweets">
         <agm-info-window>Börk</agm-info-window>
-    </agm-marker>
-    <agm-marker [latitude]="50.678418" [longitude]="6.809007">
-        <agm-info-window><img class="blockImage" src="assets/images/tweet-text.png"></agm-info-window>
     </agm-marker>
 </agm-map>

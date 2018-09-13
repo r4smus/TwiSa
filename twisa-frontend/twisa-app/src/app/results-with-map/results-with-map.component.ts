@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Tweet } from '../tweet';
+import { TwisaApiService } from '../twisa-api.service';
+import { FormDataService } from '../data/form-data.service';
+import { FormData } from '../data/formData.model';
 
 @Component({
   selector: 'app-results-with-map',
@@ -7,12 +11,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResultsWithMapComponent implements OnInit {
 
-  lat: number = 51.678418;
-  lng: number = 7.809007;
+  tweets: Tweet[];
+  @Input() formData: FormData;
 
-  constructor() { }
+  constructor(private twisaApiService: TwisaApiService, private formDataService: FormDataService ) { }
 
   ngOnInit() {
+    this.getTweets();
+    this.formData = this.formDataService.getFormData();
+    console.log(this.formData);
+  }
+
+
+  getTweets(): void {
+    this.twisaApiService.getTweets()
+      .then(tweets => this.tweets = tweets.filter(tweet => this.formData.tweetLanguages.includes(tweet.lang)));
   }
 
 }
