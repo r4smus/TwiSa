@@ -3,6 +3,50 @@
 <!-- the component as the initial center of the map: -->
 <agm-map [latitude]="lat" [longitude]="lng">
     <agm-marker [latitude]="tweet.latitude" [longitude]="tweet.longitude" *ngFor="let tweet of tweets">
-        <agm-info-window>Börk</agm-info-window>
+        <agm-info-window>
+            <div class="container twitterItem">
+                <div class="row rowTwitterItem">
+                    <div class="col-sm-2 firstCol">
+                        <img class="blockImage" src="{{tweet.user.profile_image_url}}">
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="label-entry">Name:</div>
+                        <div class="label-entry">Follower:</div>
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="value-entry">{{tweet.user.name}}</div>
+                        <div class="value-entry">{{tweet.user.followers_count}}</div>
+                    </div>
+                </div>
+                <div class="row rowTwitterItem">
+                    <div class="col-sm-2 firstCol">
+                        <img class="blockImage" src="assets/images/tweet-text.png">
+                    </div>
+                    <div class="col-sm-10">
+                        <div class="section-entry">{{tweet.text}}</div>
+                    </div>
+                </div>
+                <div class="row rowTwitterItem">
+                    <div class="col-sm-2 firstCol"></div>
+                    <div class="col-sm-5">
+                        <div class="label-entry">Language:</div>
+                        <div class="label-entry">Source:</div>
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="value-entry"><img src="{{getFlagPath(tweet.lang)}}"></div>
+                        <div class="value-entry"></div>
+                    </div>
+                </div>
+            </div>
+        </agm-info-window>
     </agm-marker>
 </agm-map>
+<nav class="centerRow">
+    <ul>
+        <li>
+            <a routerLink="/conditions" routerLinkActive="active">
+                <img src="assets/arrows/icons8-left-50.png">
+            </a>
+        </li>
+    </ul>
+</nav>

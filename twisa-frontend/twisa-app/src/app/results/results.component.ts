@@ -42,6 +42,6 @@ export class ResultsComponent implements OnInit {
             console.log('No flag path found!');
             break;
     }
-}
+  }
 
 }

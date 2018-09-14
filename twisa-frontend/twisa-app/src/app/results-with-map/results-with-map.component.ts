@@ -28,4 +28,20 @@ export class ResultsWithMapComponent implements OnInit {
       .then(tweets => this.tweets = tweets.filter(tweet => this.formData.tweetLanguages.includes(tweet.lang)));
   }
 
+  public getFlagPath(lang: string): string {
+    switch (lang) {
+        case 'de':
+            return 'assets/images/flags/flag_germany.png';
+        case 'en':
+            return 'assets/images/flags/flag_uk.png';
+        case 'ru':
+            return 'assets/images/flags/flag_russia.png';
+        case 'es':
+            return 'assets/images/flags/flag_spain.png';
+        default:
+            console.log('No flag path found!');
+            break;
+    }
+  }
+
 }

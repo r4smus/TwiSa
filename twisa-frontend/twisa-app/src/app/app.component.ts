@@ -9,7 +9,4 @@ export class AppComponent  {
     title = 'TwiSA Web-App';
 
 
-
-
-
 }
