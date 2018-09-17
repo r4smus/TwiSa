@@ -3,6 +3,7 @@ import { TwisaApiService } from '../twisa-api.service';
 import { Tweet } from '../tweet';
 import { FormDataService } from '../data/form-data.service';
 import { FormData } from '../data/formData.model';
+import { SourceType } from '../source-type';
 
 @Component({
   selector: 'app-results',
@@ -33,7 +34,7 @@ export class ResultsComponent implements OnInit {
     }
   }
 
-  public getFlagPath(lang: string): string {
+  getFlagPath(lang: string): string {
     switch (lang) {
         case 'de':
             return 'assets/images/flags/flag_germany.png';
@@ -49,4 +50,13 @@ export class ResultsComponent implements OnInit {
     }
   }
 
+  getSourceType(source: string): SourceType {
+    if (source.includes('Twitter Web Client')) {
+        return SourceType.WebClient;
+    } else if (source.includes('Twitter for Android')) {
+        return SourceType.Android;
+    } else if (source.includes('Twitter for iPhone')) {
+        return SourceType.Apple;
+    }
+  }
 }

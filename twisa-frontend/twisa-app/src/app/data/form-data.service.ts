@@ -34,6 +34,6 @@ export class FormDataService {
   }
 
   languageSelected(): boolean {
-    return this.formData.tweetLanguages == null;
-}
+    return this.formData.tweetLanguages.length > 0;
+  }
 }

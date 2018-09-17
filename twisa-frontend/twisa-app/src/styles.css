@@ -38,9 +38,11 @@ h3 {
     height: 30px;
     line-height: 30px;
 }
+
 .value-entry img {
     width: 30px;
-    
+    height: 30px;
+    padding: 3px;
 }
 
 .label-entry {
@@ -60,7 +62,7 @@ h3 {
     padding: 10px;
 }
 
-.rowTwitterItem .firstCol{
+.rowTwitterItem .firstCol {
     padding: 0px;
 }
 

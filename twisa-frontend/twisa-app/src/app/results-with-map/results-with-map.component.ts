@@ -3,6 +3,7 @@ import { Tweet } from '../tweet';
 import { TwisaApiService } from '../twisa-api.service';
 import { FormDataService } from '../data/form-data.service';
 import { FormData } from '../data/formData.model';
+import { SourceType } from '../source-type';
 
 @Component({
   selector: 'app-results-with-map',
@@ -22,7 +23,6 @@ export class ResultsWithMapComponent implements OnInit {
   ngOnInit() {
     this.getTweets();
     this.formData = this.formDataService.getFormData();
-    console.log(this.formData);
   }
 
 
@@ -49,6 +49,16 @@ export class ResultsWithMapComponent implements OnInit {
         default:
             console.log('No flag path found!');
             break;
+    }
+  }
+
+  getSourceType(source: string): SourceType {
+    if (source.includes('Twitter Web Client')) {
+        return SourceType.WebClient;
+    } else if (source.includes('Twitter for Android')) {
+        return SourceType.Android;
+    } else if (source.includes('Twitter for iPhone')) {
+        return SourceType.Apple;
     }
   }
 

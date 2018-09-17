@@ -32,18 +32,22 @@ public class Tweet {
 	
 	private float longitude;
 	
+	@NotNull
+	private String source;
+	
 	
 	public Tweet() {
 		
 	}
 	
-	public Tweet(int id, String text, String lang, User user, float latitude, float longitude) {
+	public Tweet(int id, String text, String lang, User user, float latitude, float longitude, String source) {
 		this.id = id;
 		this.text = text;
 		this.lang = lang;
 		this.user = user;
 		this.latitude = latitude;
 		this.longitude = longitude;
+		this.source = source;
 	}
 
 	public User getUser() {
@@ -89,5 +93,15 @@ public class Tweet {
 	public void setLongitude(float longitude) {
 		this.longitude = longitude;
 	}
+
+	public String getSource() {
+		return source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+	}
+	
+	
 	
 }

@@ -5,7 +5,7 @@ export class User {
     public followers_count: number;
     public profile_image_url: string;
 
-    constructor(id: number, name: string, followers_count: number, profile_image_url: string){
+    constructor(id: number, name: string, followers_count: number, profile_image_url: string) {
         this.id = id;
         this.name = name;
         this.followers_count = followers_count;

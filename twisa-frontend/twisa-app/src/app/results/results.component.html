@@ -7,11 +7,11 @@
                     <div class="col-sm-2 firstCol">
                         <img class="blockImage" src="{{tweet.user.profile_image_url}}">
                     </div>
-                    <div class="col-sm-5">
+                    <div class="col-sm-2">
                         <div class="label-entry">Name:</div>
                         <div class="label-entry">Follower:</div>
                     </div>
-                    <div class="col-sm-5">
+                    <div class="col-sm-8">
                         <div class="value-entry">{{tweet.user.name}}</div>
                         <div class="value-entry">{{tweet.user.followers_count}}</div>
                     </div>
@@ -26,13 +26,13 @@
                 </div>
                 <div class="row rowTwitterItem">
                     <div class="col-sm-2 firstCol"></div>
-                    <div class="col-sm-5">
+                    <div class="col-sm-2">
                         <div class="label-entry">Language:</div>
                         <div class="label-entry">Source:</div>
                     </div>
-                    <div class="col-sm-5">
+                    <div class="col-sm-8">
                         <div class="value-entry"><img src="{{getFlagPath(tweet.lang)}}"></div>
-                        <div class="value-entry"></div>
+                        <div class="value-entry"><img title="{{getSourceType(tweet.source).name}}" src="{{getSourceType(tweet.source).imagePath}}"></div>
                     </div>
                 </div>
             </div>
