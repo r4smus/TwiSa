@@ -24,8 +24,13 @@ export class ResultsComponent implements OnInit {
 
 
   getTweets(): void {
-    this.twisaApiService.getTweets()
+    if (this.formDataService.languageSelected()) {
+        this.twisaApiService.getTweets()
       .then(tweets => this.tweets = tweets.filter(tweet => this.formData.tweetLanguages.includes(tweet.lang)));
+    } else {
+        this.twisaApiService.getTweets()
+      .then(tweets => this.tweets = tweets);
+    }
   }
 
   public getFlagPath(lang: string): string {

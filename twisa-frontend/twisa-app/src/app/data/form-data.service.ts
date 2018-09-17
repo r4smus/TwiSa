@@ -32,4 +32,8 @@ export class FormDataService {
     // Return the entire Form Data
     return this.formData;
   }
+
+  languageSelected(): boolean {
+    return this.formData.tweetLanguages == null;
+}
 }
