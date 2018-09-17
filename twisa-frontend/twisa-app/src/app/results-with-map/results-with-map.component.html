@@ -1,7 +1,7 @@
 <h3>Results with Map</h3>
 <!-- this creates a google map on the page with the given lat/lng from -->
 <!-- the component as the initial center of the map: -->
-<agm-map [latitude]="lat" [longitude]="lng">
+<agm-map [latitude]="initalCenterLatitude" [longitude]="initalCenterLongitude" [zoom]="initalZoom">
     <agm-marker [latitude]="tweet.latitude" [longitude]="tweet.longitude" *ngFor="let tweet of tweets">
         <agm-info-window>
             <div class="container twitterItem">

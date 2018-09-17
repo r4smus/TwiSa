@@ -13,6 +13,9 @@ export class ResultsWithMapComponent implements OnInit {
 
   tweets: Tweet[];
   @Input() formData: FormData;
+  initalCenterLatitude = 46.332424;
+  initalCenterLongitude = 2.364239;
+  initalZoom = 5;
 
   constructor(private twisaApiService: TwisaApiService, private formDataService: FormDataService ) { }
 
