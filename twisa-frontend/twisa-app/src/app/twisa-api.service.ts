@@ -6,7 +6,7 @@ import { Tweet } from './tweet';
 @Injectable()
 export class TwisaApiService {
 
-  private baseUrl = 'http://localhost:8080/twisa-api'
+  private baseUrl = 'http://localhost:8080/twisa-api';
 
   constructor(private http: Http) { }
 
