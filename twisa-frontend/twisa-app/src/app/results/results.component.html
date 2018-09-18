@@ -3,7 +3,7 @@
     <ul class="list-group">
         <li class="list-group-item" *ngFor="let tweet of tweets">
             <div class="container twitterItem">
-                <div class="row rowTwitterItem">
+                <div class="row rowTwitterItem" [hidden]="!showUser">
                     <div class="col-sm-2 firstCol">
                         <img class="blockImage" src="{{tweet.user.profile_image_url}}">
                     </div>

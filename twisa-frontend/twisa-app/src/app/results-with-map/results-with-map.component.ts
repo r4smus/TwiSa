@@ -5,6 +5,7 @@ import { FormDataService } from '../data/form-data.service';
 import { FormData } from '../data/formData.model';
 import { SourceType } from '../enums/source-type';
 import { LanguageType } from '../enums/language-type';
+import { SelectAttribute } from '../enums/select-attribute';
 
 @Component({
   selector: 'app-results-with-map',
@@ -18,12 +19,14 @@ export class ResultsWithMapComponent implements OnInit {
   initalCenterLatitude = 46.332424;
   initalCenterLongitude = 2.364239;
   initalZoom = 5;
+  showUser: boolean;
 
   constructor(private twisaApiService: TwisaApiService, private formDataService: FormDataService ) { }
 
   ngOnInit() {
     this.getTweets();
     this.formData = this.formDataService.getFormData();
+    this.showUser = this.formData.selectedAttributes.includes(SelectAttribute.User);
   }
 
 

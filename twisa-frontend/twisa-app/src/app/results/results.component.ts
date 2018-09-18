@@ -5,6 +5,7 @@ import { FormDataService } from '../data/form-data.service';
 import { FormData } from '../data/formData.model';
 import { SourceType } from '../enums/source-type';
 import { LanguageType } from '../enums/language-type';
+import { SelectAttribute } from '../enums/select-attribute';
 
 @Component({
   selector: 'app-results',
@@ -15,13 +16,14 @@ export class ResultsComponent implements OnInit {
 
   tweets: Tweet[];
   @Input() formData: FormData;
+  showUser: boolean;
 
   constructor(private twisaApiService: TwisaApiService, private formDataService: FormDataService ) { }
 
   ngOnInit() {
     this.getTweets();
     this.formData = this.formDataService.getFormData();
-    console.log(this.formData);
+    this.showUser = this.formData.selectedAttributes.includes(SelectAttribute.User);
   }
 
 

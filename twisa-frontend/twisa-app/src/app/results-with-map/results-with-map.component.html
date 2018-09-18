@@ -5,7 +5,7 @@
     <agm-marker [latitude]="tweet.latitude" [longitude]="tweet.longitude" *ngFor="let tweet of tweets">
         <agm-info-window>
             <div class="container twitterItem">
-                <div class="row rowTwitterItem">
+                <div class="row rowTwitterItem" [hidden]="!showUser">
                     <div class="col-sm-2 firstCol">
                         <img class="blockImage" src="{{tweet.user.profile_image_url}}">
                     </div>
