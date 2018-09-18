@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormDataService } from '../data/form-data.service';
 import { Conditions } from '../data/formData.model';
 import { Router } from '@angular/router';
-import { SelectAttribute } from '../select-attribute';
+import { SelectAttribute } from '../enums/select-attribute';
 
 @Component({
   selector: 'app-conditions',
@@ -22,9 +22,9 @@ export class ConditionsComponent implements OnInit {
 
   saveAndRoute(): void {
     this.formDataService.setConditions(this.conditions);
-    if (this.formDataService.getSelectAttributes().includes(SelectAttribute.Map)){
+    if (this.formDataService.getSelectAttributes().includes(SelectAttribute.Map)) {
       this.router.navigate(['/resultsWithMap']);
-    }else {
+    } else {
       this.router.navigate(['/results']);
     }
   }

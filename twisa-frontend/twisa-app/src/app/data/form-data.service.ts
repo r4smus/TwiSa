@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { FormData, Conditions } from './formData.model';
-import { SelectAttribute } from '../select-attribute';
+import { SelectAttribute } from '../enums/select-attribute';
 
 @Injectable()
 export class FormDataService {

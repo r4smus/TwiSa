@@ -3,7 +3,8 @@ import { TwisaApiService } from '../twisa-api.service';
 import { Tweet } from '../tweet';
 import { FormDataService } from '../data/form-data.service';
 import { FormData } from '../data/formData.model';
-import { SourceType } from '../source-type';
+import { SourceType } from '../enums/source-type';
+import { LanguageType } from '../enums/language-type';
 
 @Component({
   selector: 'app-results',
@@ -34,18 +35,18 @@ export class ResultsComponent implements OnInit {
     }
   }
 
-  getFlagPath(lang: string): string {
+  getLanguageType(lang: string): LanguageType {
     switch (lang) {
         case 'de':
-            return 'assets/images/flags/flag_germany.png';
+            return LanguageType.DE;
         case 'en':
-            return 'assets/images/flags/flag_uk.png';
+            return LanguageType.EN;
         case 'ru':
-            return 'assets/images/flags/flag_russia.png';
+            return LanguageType.RU;
         case 'es':
-            return 'assets/images/flags/flag_spain.png';
+            return LanguageType.ES;
         default:
-            console.log('No flag path found!');
+            console.log('No LanguageType found for ( ' + lang + ')');
             break;
     }
   }

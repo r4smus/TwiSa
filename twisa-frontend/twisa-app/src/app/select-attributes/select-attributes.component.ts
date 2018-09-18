@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SelectAttribute } from '../select-attribute';
+import { SelectAttribute } from '../enums/select-attribute';
 import { FormDataService } from '../data/form-data.service';
 
 @Component({

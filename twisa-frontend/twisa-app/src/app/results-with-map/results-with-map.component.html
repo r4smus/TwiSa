@@ -33,7 +33,7 @@
                         <div class="label-entry">Source:</div>
                     </div>
                     <div class="col-sm-8">
-                        <div class="value-entry"><img src="{{getFlagPath(tweet.lang)}}"></div>
+                        <div class="value-entry"><img title="{{getLanguageType(tweet.lang).name}}" src="{{getLanguageType(tweet.lang).imagePath}}"></div>
                         <div class="value-entry"><img title="{{getSourceType(tweet.source).name}}" src="{{getSourceType(tweet.source).imagePath}}"></div>
                     </div>
                 </div>
