@@ -89,6 +89,18 @@ nav a {
 
 nav a:hover {
     cursor: pointer;
+    text-decoration: none;
+}
+
+nav label {
+    font-size: large;
+    margin-right: 10px;
+    margin-left: 10px;
+    color: white;   
+}
+
+nav label:hover {
+    cursor: pointer;
 }
 
 
