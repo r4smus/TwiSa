@@ -16,6 +16,7 @@ export class SelectAttributesComponent {
         this.availableSelectAtts.push(SelectAttribute.TweetText);
         this.availableSelectAtts.push(SelectAttribute.TweetSource);
         this.availableSelectAtts.push(SelectAttribute.User);
+        this.availableSelectAtts.push(SelectAttribute.Language);
     }
 
     addToDroppedSelectAtts($event: any) {
