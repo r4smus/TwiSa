@@ -17,6 +17,9 @@ export class ResultsComponent implements OnInit {
   tweets: Tweet[];
   @Input() formData: FormData;
   showUser: boolean;
+  showSource: boolean;
+  showLanguage: boolean;
+  showText: boolean;
 
   constructor(private twisaApiService: TwisaApiService, private formDataService: FormDataService ) { }
 
@@ -24,6 +27,9 @@ export class ResultsComponent implements OnInit {
     this.getTweets();
     this.formData = this.formDataService.getFormData();
     this.showUser = this.formData.selectedAttributes.includes(SelectAttribute.User);
+    this.showSource = this.formData.selectedAttributes.includes(SelectAttribute.TweetSource);
+    this.showLanguage = this.formData.selectedAttributes.includes(SelectAttribute.Language);
+    this.showText = this.formData.selectedAttributes.includes(SelectAttribute.TweetText);
   }
 
 
