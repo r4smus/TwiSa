@@ -27,10 +27,14 @@
         </div>
     </div>
 </div>
+<div class="centerRow" >
+    <div class="errorMessages" [hidden]="!showErrorMessage">Please select at least one attribute.</div>
+</div>
+
 <nav class="centerRow">
     <ul>
         <li>
-            <a routerLink="/conditions" routerLinkActive="active" (click)="save()">
+            <a (click)="saveAndRoute()">
                 <label>Continue</label>
                 <img src="assets/arrows/icons8-right-50.png">
             </a>

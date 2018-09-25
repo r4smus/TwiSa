@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { SelectAttribute } from '../enums/select-attribute';
 import { FormDataService } from '../data/form-data.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-select-attributes',
@@ -10,8 +11,9 @@ import { FormDataService } from '../data/form-data.service';
 export class SelectAttributesComponent {
     availableSelectAtts: Array<SelectAttribute> = [];
     droppedSelectAtts: Array<SelectAttribute> = [];
+    showErrorMessage: boolean;
 
-    constructor(private formDataService: FormDataService) {
+    constructor(private router: Router, private formDataService: FormDataService) {
         this.availableSelectAtts.push(SelectAttribute.Map);
         this.availableSelectAtts.push(SelectAttribute.TweetText);
         this.availableSelectAtts.push(SelectAttribute.TweetSource);
@@ -35,5 +37,14 @@ export class SelectAttributesComponent {
         this.formDataService.setSelectAttributes(this.droppedSelectAtts);
         console.log('save()-method called');
     }
+
+    saveAndRoute(): void {
+        if (this.droppedSelectAtts.length > 0) {
+          this.formDataService.setSelectAttributes(this.droppedSelectAtts);
+          this.router.navigate(['/conditions']);
+        } else {
+          this.showErrorMessage = true;
+        }
+      }
 }
 
