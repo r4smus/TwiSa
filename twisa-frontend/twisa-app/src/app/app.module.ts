@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { FormDataService } from './data/form-data.service';
 import { ResultsWithMapComponent } from './results-with-map/results-with-map.component';
 import { AgmCoreModule} from '@agm/core';
+import {NgxToggleModule} from 'ngx-toggle';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { AgmCoreModule} from '@agm/core';
     AppRoutingModule,
     HttpModule,
     FormsModule,
+    NgxToggleModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyA3UAF3Lhv-VoF29P4FhBgklVkc4VLD0vU'
     })

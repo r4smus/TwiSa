@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { SelectAttribute } from '../enums/select-attribute';
 import { FormDataService } from '../data/form-data.service';
 import { Router } from '@angular/router';
+import {NgxToggleModule} from 'ngx-toggle';
 
 @Component({
     selector: 'app-select-attributes',
@@ -12,6 +13,15 @@ export class SelectAttributesComponent {
     availableSelectAtts: Array<SelectAttribute> = [];
     droppedSelectAtts: Array<SelectAttribute> = [];
     showErrorMessage: boolean;
+    model: any = {
+        onColor: 'primary',
+        offColor: 'warning',
+        onText: 'Results on a map',
+        offText: "Results as list",
+        disabled: false,
+        size: '',
+        value: null
+      };
 
     constructor(private router: Router, private formDataService: FormDataService) {
         this.availableSelectAtts.push(SelectAttribute.Map);

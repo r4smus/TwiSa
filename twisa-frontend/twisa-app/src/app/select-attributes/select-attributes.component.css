@@ -16,3 +16,20 @@ li {
     background: #D25565;
     color: white;
 }
+
+.mapIcon {
+    height: 40px;
+}
+
+.toogleMap {
+    display: inherit;
+}
+
+.mapIconsSeperator {
+    font-size: xx-large;
+    margin: 0 10px 0 10px;
+}
+
+.toogleSwitch {
+    margin-left: 20px;
+}

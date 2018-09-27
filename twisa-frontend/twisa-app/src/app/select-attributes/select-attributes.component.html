@@ -27,6 +27,25 @@
         </div>
     </div>
 </div>
+<div class="row centerRow">
+    <div class="col-sm-3 toogleMap">
+    <img class="mapIcon" src="assets/images/select_attributes/Maps-icon.png">
+    <label class="mapIconsSeperator">/</label>
+    <img class="mapIcon" src="assets/images/select_attributes/list.png">
+    <ngx-toggle
+        class="toogleSwitch"
+        onColor="{{model.onColor}}"
+        onText="{{model.onText}}"
+        offColor="{{model.offColor}}"
+        offText="{{model.offText}}"
+        [disabled]="model.disabled"
+        [size]="model.size"
+        [(value)]="model.value"
+    >
+    </ngx-toggle>
+    </div>
+    <div class="col-sm-3"></div>
+</div>
 <div class="centerRow" >
     <div class="errorMessages" [hidden]="!showErrorMessage">Please select at least one attribute.</div>
 </div>
