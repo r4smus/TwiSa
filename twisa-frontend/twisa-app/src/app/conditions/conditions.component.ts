@@ -22,7 +22,7 @@ export class ConditionsComponent implements OnInit {
 
   saveAndRoute(): void {
     this.formDataService.setConditions(this.conditions);
-    if (this.formDataService.getSelectAttributes().includes(SelectAttribute.Map)) {
+    if (this.formDataService.showMap()) {
       this.router.navigate(['/resultsWithMap']);
     } else {
       this.router.navigate(['/results']);

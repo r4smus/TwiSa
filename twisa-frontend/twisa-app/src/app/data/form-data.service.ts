@@ -17,6 +17,14 @@ export class FormDataService {
     this.formData.selectedAttributes = data;
   }
 
+  showMap(): boolean {
+    return this.formData.showMap;
+  }
+
+  setShowMap(showMap: boolean) {
+    this.formData.showMap = showMap;
+  }
+
   getConditions(): Conditions {
     const conditions: Conditions = {
       tweetLanguages: this.formData.tweetLanguages

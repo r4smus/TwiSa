@@ -13,18 +13,17 @@ export class SelectAttributesComponent {
     availableSelectAtts: Array<SelectAttribute> = [];
     droppedSelectAtts: Array<SelectAttribute> = [];
     showErrorMessage: boolean;
-    model: any = {
+    toogleSwitchModel: any = {
         onColor: 'primary',
         offColor: 'warning',
         onText: 'Results on a map',
-        offText: "Results as list",
+        offText: 'Results as list',
         disabled: false,
         size: '',
         value: null
       };
 
     constructor(private router: Router, private formDataService: FormDataService) {
-        this.availableSelectAtts.push(SelectAttribute.Map);
         this.availableSelectAtts.push(SelectAttribute.TweetText);
         this.availableSelectAtts.push(SelectAttribute.TweetSource);
         this.availableSelectAtts.push(SelectAttribute.User);
@@ -51,6 +50,7 @@ export class SelectAttributesComponent {
     saveAndRoute(): void {
         if (this.droppedSelectAtts.length > 0) {
           this.formDataService.setSelectAttributes(this.droppedSelectAtts);
+          this.formDataService.setShowMap(this.toogleSwitchModel.value);
           this.router.navigate(['/conditions']);
         } else {
           this.showErrorMessage = true;

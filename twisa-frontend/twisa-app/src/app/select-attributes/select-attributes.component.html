@@ -29,24 +29,16 @@
 </div>
 <div class="row centerRow">
     <div class="col-sm-3 toogleMap">
-    <img class="mapIcon" src="assets/images/select_attributes/Maps-icon.png">
-    <label class="mapIconsSeperator">/</label>
-    <img class="mapIcon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAG8SURBVGhD7dq/K0VhHMfxi1CEDAxCMVCiTCxKYpHFYvIX2ERhNikDk7/A4MdmsDAoq1VJ2ZRNssqP9zN869Pp1D3Pvfecc93zvOs1nXquT7k591ylBM3iHG/4zdAHbrGGJlTVFr4R90JZOkMrKmoVP4g7OA+HqKhn2CGveMjBE+xn+MIQvJqCHeDsIY/moD/HBrxahh5QL0O8f71WoAfUy5ATeBWG1LgwxCrMkH1ciA5Yw9BrvrTUh9xDr/fAiv4N8qWFIVZhhgxgVDTDaoNe86WlPiSrwhCr3JAu9Ar9BNcCvZaU/npa//LN7v7+RAtDrMIMOcKN6IQ1Ar2WVD+ipT4kq8IQqzBD1rEr2mH1Qa/50lIfEu5+E9DCEKvckAW4p+RGHzC7UXrNl5b6kKwKQ6zCDLnGu+iGNQG9ltQgoqU+pGHufhtmiPty9EW4j77WOPRaUu7JTLTwZrfCkBoXhlhhSI2LDjmGVzPQA+plyDa8crfl7rbBDrjDQQ5OoUOm4d0O9JC8XaGi3MPoS8QdmrVHuIcaFeeekG/C/VNN3Auk7RPuDa5311XlvjYYwzyWMrCISbhvvxJUKv0BceNOwNNIy4MAAAAASUVORK5CYII=">
-    <ngx-toggle
-        class="toogleSwitch"
-        onColor="{{model.onColor}}"
-        onText="{{model.onText}}"
-        offColor="{{model.offColor}}"
-        offText="{{model.offText}}"
-        [disabled]="model.disabled"
-        [size]="model.size"
-        [(value)]="model.value"
-    >
-    </ngx-toggle>
+        <img class="mapIcon" src="assets/images/select_attributes/Maps-icon.png">
+        <label class="mapIconsSeperator">/</label>
+        <img class="mapIcon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAG8SURBVGhD7dq/K0VhHMfxi1CEDAxCMVCiTCxKYpHFYvIX2ERhNikDk7/A4MdmsDAoq1VJ2ZRNssqP9zN869Pp1D3Pvfecc93zvOs1nXquT7k591ylBM3iHG/4zdAHbrGGJlTVFr4R90JZOkMrKmoVP4g7OA+HqKhn2CGveMjBE+xn+MIQvJqCHeDsIY/moD/HBrxahh5QL0O8f71WoAfUy5ATeBWG1LgwxCrMkH1ciA5Yw9BrvrTUh9xDr/fAiv4N8qWFIVZhhgxgVDTDaoNe86WlPiSrwhCr3JAu9Ar9BNcCvZaU/npa//LN7v7+RAtDrMIMOcKN6IQ1Ar2WVD+ipT4kq8IQqzBD1rEr2mH1Qa/50lIfEu5+E9DCEKvckAW4p+RGHzC7UXrNl5b6kKwKQ6zCDLnGu+iGNQG9ltQgoqU+pGHufhtmiPty9EW4j77WOPRaUu7JTLTwZrfCkBoXhlhhSI2LDjmGVzPQA+plyDa8crfl7rbBDrjDQQ5OoUOm4d0O9JC8XaGi3MPoS8QdmrVHuIcaFeeekG/C/VNN3Auk7RPuDa5311XlvjYYwzyWMrCISbhvvxJUKv0BceNOwNNIy4MAAAAASUVORK5CYII=">
+        <ngx-toggle class="toogleSwitch" onColor="{{toogleSwitchModel.onColor}}" onText="{{toogleSwitchModel.onText}}" offColor="{{toogleSwitchModel.offColor}}" offText="{{toogleSwitchModel.offText}}" [disabled]="toogleSwitchModel.disabled" [size]="toogleSwitchModel.size"
+            [(value)]="toogleSwitchModel.value">
+        </ngx-toggle>
     </div>
     <div class="col-sm-3"></div>
 </div>
-<div class="centerRow" >
+<div class="centerRow">
     <div class="errorMessages" [hidden]="!showErrorMessage">Please select at least one attribute.</div>
 </div>
 
