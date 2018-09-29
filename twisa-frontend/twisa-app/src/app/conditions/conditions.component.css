@@ -4,7 +4,7 @@
 
 .selectLanguage:hover {
     cursor: pointer;
-    background: green;
+    background: #5cb95c;
 }
 
 .inputCol {
@@ -20,7 +20,7 @@
 }
 
 .languageSelected {
-    background: green;
+    background: #5cb95c;
     margin-right: 20px;
 }
 

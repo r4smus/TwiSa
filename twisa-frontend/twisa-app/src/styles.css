@@ -96,7 +96,7 @@ nav label {
     font-size: large;
     margin-right: 10px;
     margin-left: 10px;
-    color: white;   
+    color: white;
 }
 
 nav label:hover {
@@ -105,13 +105,17 @@ nav label:hover {
 
 .errorMessages {
     width: 900px;
-    margin: 0 10px 15px 10px;
+    margin: 20px 10px 15px 10px;
     padding: 8px 35px 8px 30px;
     color: #B94A48;
     background-color: #F2DEDE;
     border: 2px solid #EED3D7;
     border-radius: 4px;
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+nav img {
+    height: 50px;
 }
 
 

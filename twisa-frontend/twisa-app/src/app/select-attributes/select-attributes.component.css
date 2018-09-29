@@ -13,7 +13,7 @@ li {
 }
 
 .headingStyle {
-    background: #D25565;
+    background: #D65652;
     color: white;
 }
 
@@ -32,4 +32,10 @@ li {
 
 .toogleSwitch {
     margin-left: 20px;
+}
+
+.addAllIcon {
+    margin-top: 20px;
+    cursor: pointer;
+    height: 40px;
 }

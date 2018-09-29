@@ -14,14 +14,15 @@ export class SelectAttributesComponent {
     droppedSelectAtts: Array<SelectAttribute> = [];
     showErrorMessage: boolean;
     toogleSwitchModel: any = {
-        onColor: 'primary',
-        offColor: 'warning',
+        onColor: 'success',
+        offColor: 'danger',
         onText: 'Results on a map',
         offText: 'Results as list',
         disabled: false,
         size: '',
         value: null
       };
+      tootleSwitchText = 'Show tweets on a map, or as a list?';
 
     constructor(private router: Router, private formDataService: FormDataService) {
         this.availableSelectAtts.push(SelectAttribute.TweetText);
@@ -55,6 +56,10 @@ export class SelectAttributesComponent {
         } else {
           this.showErrorMessage = true;
         }
-      }
+    }
+
+    addAllAttributes(): void {
+        this.droppedSelectAtts = this.availableSelectAtts;
+    }
 }
 
