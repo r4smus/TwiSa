@@ -17,6 +17,7 @@ import { FormDataService } from './data/form-data.service';
 import { ResultsWithMapComponent } from './results-with-map/results-with-map.component';
 import { AgmCoreModule} from '@agm/core';
 import {NgxToggleModule} from 'ngx-toggle';
+import { Ng5SliderModule } from 'ng5-slider';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import {NgxToggleModule} from 'ngx-toggle';
     HttpModule,
     FormsModule,
     NgxToggleModule,
+    Ng5SliderModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyA3UAF3Lhv-VoF29P4FhBgklVkc4VLD0vU'
     })

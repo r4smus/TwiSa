@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormDataService } from '../data/form-data.service';
 import { Conditions } from '../data/formData.model';
 import { Router } from '@angular/router';
-import { SelectAttribute } from '../enums/select-attribute';
+import { Options } from 'ng5-slider';
 
 @Component({
   selector: 'app-conditions',
@@ -12,6 +12,13 @@ import { SelectAttribute } from '../enums/select-attribute';
 export class ConditionsComponent implements OnInit {
 
   conditions: Conditions;
+  minValue: number = 20;
+  maxValue: number = 3000;
+  options: Options = {
+    floor: 0,
+    ceil: 5000,
+    step: 50
+  };
 
   constructor(private router: Router, private formDataService: FormDataService) { }
 
