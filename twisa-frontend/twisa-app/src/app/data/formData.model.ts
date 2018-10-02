@@ -4,6 +4,7 @@ export class FormData {
     selectedAttributes: Array<SelectAttribute> = [];
     tweetLanguages: Array<string> = [];
     showMap: boolean;
+    followerRange: [number, number];
 }
 
 

@@ -41,7 +41,7 @@ export class FormDataService {
     return this.formData;
   }
 
-  languageSelected(): boolean {
-    return this.formData.tweetLanguages.length > 0;
+  nothingSelected(): boolean {
+    return this.formData.tweetLanguages.length === 0 && this.formData.followerRange == null;
   }
 }

@@ -34,12 +34,12 @@ export class ResultsComponent implements OnInit {
 
 
   getTweets(): void {
-    if (this.formDataService.languageSelected()) {
-        this.twisaApiService.getTweets()
-      .then(tweets => this.tweets = tweets.filter(tweet => this.formData.tweetLanguages.includes(tweet.lang)));
-    } else {
+    if (this.formDataService.nothingSelected()) {
         this.twisaApiService.getTweets()
       .then(tweets => this.tweets = tweets);
+    } else {
+        this.twisaApiService.getTweets()
+      .then(tweets => this.tweets = tweets.filter(tweet => this.formData.tweetLanguages.includes(tweet.lang)));
     }
   }
 
