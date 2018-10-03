@@ -37,12 +37,17 @@ export class ResultsWithMapComponent implements OnInit {
 
 
   getTweets(): void {
+    const minFollower = this.formDataService.getConditions().followerRange[0];
+    const maxFollower = this.formDataService.getConditions().followerRange[1];
     if (this.formDataService.nothingSelected()) {
         this.twisaApiService.getTweets()
-      .then(tweets => this.tweets = tweets);
+      .then(tweets => this.tweets = tweets
+      .filter(tweet => tweet.user.followers_count > minFollower  && tweet.user.followers_count < maxFollower));
     } else {
         this.twisaApiService.getTweets()
-      .then(tweets => this.tweets = tweets.filter(tweet => this.formData.tweetLanguages.includes(tweet.lang)));
+      .then(tweets => this.tweets = tweets
+      .filter(tweet => this.formData.tweetLanguages.includes(tweet.lang))
+      .filter(tweet => tweet.user.followers_count > minFollower  && tweet.user.followers_count < maxFollower));
     }
   }
 

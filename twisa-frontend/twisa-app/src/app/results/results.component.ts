@@ -30,16 +30,23 @@ export class ResultsComponent implements OnInit {
     this.showSource = this.formData.selectedAttributes.includes(SelectAttribute.TweetSource);
     this.showLanguage = this.formData.selectedAttributes.includes(SelectAttribute.Language);
     this.showText = this.formData.selectedAttributes.includes(SelectAttribute.TweetText);
+    console.log(this.formData);
+    console.log(this.formDataService.getConditions());
   }
 
 
   getTweets(): void {
+    const minFollower = this.formDataService.getConditions().followerRange[0];
+    const maxFollower = this.formDataService.getConditions().followerRange[1];
     if (this.formDataService.nothingSelected()) {
         this.twisaApiService.getTweets()
-      .then(tweets => this.tweets = tweets);
+      .then(tweets => this.tweets = tweets
+      .filter(tweet => tweet.user.followers_count > minFollower  && tweet.user.followers_count < maxFollower));
     } else {
         this.twisaApiService.getTweets()
-      .then(tweets => this.tweets = tweets.filter(tweet => this.formData.tweetLanguages.includes(tweet.lang)));
+      .then(tweets => this.tweets = tweets
+      .filter(tweet => this.formData.tweetLanguages.includes(tweet.lang))
+      .filter(tweet => tweet.user.followers_count > minFollower  && tweet.user.followers_count < maxFollower));
     }
   }
 
@@ -68,4 +75,5 @@ export class ResultsComponent implements OnInit {
         return SourceType.Apple;
     }
   }
+
 }

@@ -10,4 +10,5 @@ export class FormData {
 
 export class Conditions {
     tweetLanguages: Array<string> = [];
+    followerRange: [number, number];
 }

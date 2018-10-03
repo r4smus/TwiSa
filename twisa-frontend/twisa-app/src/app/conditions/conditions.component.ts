@@ -12,12 +12,12 @@ import { Options } from 'ng5-slider';
 export class ConditionsComponent implements OnInit {
 
   conditions: Conditions;
-  minValue: number = 20;
-  maxValue: number = 3000;
+  minValue = 0;
+  maxValue = 20000;
   options: Options = {
     floor: 0,
-    ceil: 5000,
-    step: 50
+    ceil: 20000,
+    step: 100
   };
 
   constructor(private router: Router, private formDataService: FormDataService) { }
@@ -28,6 +28,7 @@ export class ConditionsComponent implements OnInit {
   }
 
   saveAndRoute(): void {
+    this.conditions.followerRange = [this.minValue, this.maxValue];
     this.formDataService.setConditions(this.conditions);
     if (this.formDataService.showMap()) {
       this.router.navigate(['/resultsWithMap']);

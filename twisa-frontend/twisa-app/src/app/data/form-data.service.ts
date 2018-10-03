@@ -27,13 +27,15 @@ export class FormDataService {
 
   getConditions(): Conditions {
     const conditions: Conditions = {
-      tweetLanguages: this.formData.tweetLanguages
+      tweetLanguages: this.formData.tweetLanguages,
+      followerRange: this.formData.followerRange
     };
     return conditions;
   }
 
   setConditions(data: Conditions) {
     this.formData.tweetLanguages = data.tweetLanguages;
+    this.formData.followerRange = data.followerRange;
   }
 
   getFormData(): FormData {
@@ -42,6 +44,6 @@ export class FormDataService {
   }
 
   nothingSelected(): boolean {
-    return this.formData.tweetLanguages.length === 0 && this.formData.followerRange == null;
+    return this.formData.tweetLanguages.length === 0;
   }
 }
