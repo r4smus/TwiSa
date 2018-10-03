@@ -42,12 +42,12 @@ export class ResultsWithMapComponent implements OnInit {
     if (this.formDataService.nothingSelected()) {
         this.twisaApiService.getTweets()
       .then(tweets => this.tweets = tweets
-      .filter(tweet => tweet.user.followers_count > minFollower  && tweet.user.followers_count < maxFollower));
+      .filter(tweet => tweet.user.followers_count >= minFollower  && tweet.user.followers_count <= maxFollower));
     } else {
         this.twisaApiService.getTweets()
       .then(tweets => this.tweets = tweets
       .filter(tweet => this.formData.tweetLanguages.includes(tweet.lang))
-      .filter(tweet => tweet.user.followers_count > minFollower  && tweet.user.followers_count < maxFollower));
+      .filter(tweet => tweet.user.followers_count >= minFollower  && tweet.user.followers_count <= maxFollower));
     }
   }
 
