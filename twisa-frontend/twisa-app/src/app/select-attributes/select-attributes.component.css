@@ -35,7 +35,15 @@ li {
 }
 
 .addAllIcon {
-    margin-top: 20px;
-    cursor: pointer;
     height: 40px;
+    cursor: pointer;
+}
+
+.addAllContainer {
+    margin-top: 20px;
+}
+
+.addAllLabel {
+    margin-left: 10px;
+    cursor: pointer;
 }
