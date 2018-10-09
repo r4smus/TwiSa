@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { SelectAttribute } from '../enums/select-attribute';
 import { FormDataService } from '../data/form-data.service';
 import { Router } from '@angular/router';
-import {NgxToggleModule} from 'ngx-toggle';
 
 @Component({
     selector: 'app-select-attributes',
@@ -60,6 +59,10 @@ export class SelectAttributesComponent {
 
     addAllAttributes(): void {
         this.droppedSelectAtts = this.availableSelectAtts;
+    }
+
+    deleteAllAttributes(): void {
+        this.droppedSelectAtts = [];
     }
 }
 

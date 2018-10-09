@@ -34,16 +34,16 @@ li {
     margin-left: 20px;
 }
 
-.addAllIcon {
+.buttonIcon {
     height: 40px;
     cursor: pointer;
 }
 
-.addAllContainer {
+.buttonContainer {
     margin-top: 20px;
 }
 
-.addAllLabel {
+.buttonLabel {
     margin-left: 10px;
     cursor: pointer;
 }
