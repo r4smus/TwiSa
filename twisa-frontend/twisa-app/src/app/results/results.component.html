@@ -24,15 +24,22 @@
                         <div class="section-entry">{{tweet.text}}</div>
                     </div>
                 </div>
-                <div [hidden]="!showLanguage && !showSource" class="row rowTwitterItem">
-                    <div class="col-sm-2 firstCol"></div>
+                <div [hidden]="!showLanguage && !showSource && !showHashtag" class="row rowTwitterItem">
                     <div class="col-sm-2">
                         <div [hidden]="!showLanguage" class="label-entry">Language:</div>
                         <div [hidden]="!showSource" class="label-entry">Source:</div>
                     </div>
-                    <div class="col-sm-8">
+                    <div class="col-sm-4">
                         <div [hidden]="!showLanguage" class="value-entry"><img title="{{getLanguageType(tweet.lang).name}}" src="{{getLanguageType(tweet.lang).imagePath}}"></div>
                         <div [hidden]="!showSource" class="value-entry"><img title="{{getSourceType(tweet.source).name}}" src="{{getSourceType(tweet.source).imagePath}}"></div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div [hidden]="!showHashtag" class="label-entry">Hashtag:</div>
+                        <div  class="label-entry">--PH:--</div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div [hidden]="!showHashtag" class="value-entry">{{tweet.hashtag}}</div>
+                        <div  class="value-entry"></div>
                     </div>
                 </div>
             </div>

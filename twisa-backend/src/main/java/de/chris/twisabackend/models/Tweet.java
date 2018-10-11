@@ -35,9 +35,22 @@ public class Tweet {
 	@NotNull
 	private String source;
 	
+	private String hashtag;
+	
 	
 	public Tweet() {
 		
+	}
+	
+	public Tweet(int id, String text, String lang, User user, float latitude, float longitude, String source, String hashtag) {
+		this.id = id;
+		this.text = text;
+		this.lang = lang;
+		this.user = user;
+		this.latitude = latitude;
+		this.longitude = longitude;
+		this.source = source;
+		this.hashtag = hashtag;
 	}
 	
 	public Tweet(int id, String text, String lang, User user, float latitude, float longitude, String source) {
@@ -101,7 +114,13 @@ public class Tweet {
 	public void setSource(String source) {
 		this.source = source;
 	}
-	
-	
+
+	public String getHashtag() {
+		return hashtag;
+	}
+
+	public void setHashtag(String hashtag) {
+		this.hashtag = hashtag;
+	}
 	
 }

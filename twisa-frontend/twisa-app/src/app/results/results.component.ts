@@ -19,6 +19,7 @@ export class ResultsComponent implements OnInit {
   showUser: boolean;
   showSource: boolean;
   showLanguage: boolean;
+  showHashtag: boolean;
   showText: boolean;
 
   constructor(private twisaApiService: TwisaApiService, private formDataService: FormDataService ) { }
@@ -29,6 +30,7 @@ export class ResultsComponent implements OnInit {
     this.showUser = this.formData.selectedAttributes.includes(SelectAttribute.User);
     this.showSource = this.formData.selectedAttributes.includes(SelectAttribute.TweetSource);
     this.showLanguage = this.formData.selectedAttributes.includes(SelectAttribute.Language);
+    this.showHashtag = this.formData.selectedAttributes.includes(SelectAttribute.Hashtag);
     this.showText = this.formData.selectedAttributes.includes(SelectAttribute.TweetText);
     console.log(this.formData);
     console.log(this.formDataService.getConditions());

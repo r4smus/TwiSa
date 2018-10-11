@@ -6,6 +6,7 @@ export class SelectAttribute {
     static readonly TweetSource = new SelectAttribute(3, 'Tweet-Source', 'assets/images/select_attributes/datasource.png');
     static readonly User = new SelectAttribute(4, 'User', 'assets/images/select_attributes/user-icon.png');
     static readonly Language = new SelectAttribute(5, 'Language', 'assets/images/select_attributes/language-icon.png');
+    static readonly Hashtag = new SelectAttribute(6, 'Hashtag', 'assets/images/select_attributes/hashtag-80.png');
 
     private constructor(public readonly id: number, public readonly name: string, public readonly imagePath: string) {}
 
