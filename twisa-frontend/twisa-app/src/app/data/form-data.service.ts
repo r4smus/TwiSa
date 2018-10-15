@@ -44,8 +44,4 @@ export class FormDataService {
     // Return the entire Form Data
     return this.formData;
   }
-
-  nothingSelected(): boolean {
-    return this.formData.tweetLanguages.length === 0 && this.formData.hashtag === undefined;
-  }
 }

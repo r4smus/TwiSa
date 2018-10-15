@@ -39,13 +39,8 @@ export class ResultsWithMapComponent implements OnInit {
 
 
   getTweets(): void {
-    if (this.formDataService.nothingSelected()) {
-        this.twisaApiService.getTweets()
-      .then(tweets => this.tweets = tweets);
-    } else {
-        this.twisaApiService.getTweets()
-      .then(tweets => this.tweets = tweets.filter(tweet => this.formData.tweetLanguages.includes(tweet.lang)));
-    }
+    this.twisaApiService.getTweets()
+    .then(tweets => this.tweets = tweets.filter(tweet => this.formData.tweetLanguages.includes(tweet.lang)));
   }
 
   getLanguageType(lang: string): LanguageType {
