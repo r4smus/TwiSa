@@ -19,6 +19,7 @@ export class ConditionsComponent implements OnInit {
     ceil: 20000,
     step: 100
   };
+  hashtag: string;
 
   constructor(private router: Router, private formDataService: FormDataService) { }
 
@@ -29,6 +30,7 @@ export class ConditionsComponent implements OnInit {
 
   saveAndRoute(): void {
     this.conditions.followerRange = [this.minValue, this.maxValue];
+    this.conditions.hashtag = this.hashtag;
     this.formDataService.setConditions(this.conditions);
     if (this.formDataService.showMap()) {
       this.router.navigate(['/resultsWithMap']);

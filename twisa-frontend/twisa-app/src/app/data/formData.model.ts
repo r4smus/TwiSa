@@ -5,10 +5,12 @@ export class FormData {
     tweetLanguages: Array<string> = [];
     showMap: boolean;
     followerRange: [number, number];
+    hashtag: string;
 }
 
 
 export class Conditions {
     tweetLanguages: Array<string> = [];
     followerRange: [number, number];
+    hashtag: string;
 }
