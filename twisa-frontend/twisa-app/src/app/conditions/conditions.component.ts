@@ -20,7 +20,7 @@ export class ConditionsComponent implements OnInit {
     ceil: 20000,
     step: 100
   };
-  hashtag: string;
+  hashtag = '#';
 
   constructor(private router: Router, private formDataService: FormDataService) { }
 
