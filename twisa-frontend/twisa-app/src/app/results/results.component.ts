@@ -44,7 +44,8 @@ export class ResultsComponent implements OnInit {
     this.twisaApiService.getTweets()
     .then(tweets => this.tweets = tweets
     .filter(tweet => this.formData.tweetLanguages.includes(tweet.lang))
-    .filter(tweet => tweet.user.followers_count >= minFollower  && tweet.user.followers_count <= maxFollower));
+    .filter(tweet => tweet.user.followers_count >= minFollower  && tweet.user.followers_count <= maxFollower)
+    .filter(tweet => (this.formData.hashtag === undefined || this.formData.hashtag === '') && true || this.formData.hashtag === tweet.hashtag));
   }
 
   getLanguageType(lang: string): LanguageType {
