@@ -9,7 +9,9 @@ li {
 
 .attributeBox {
     background: #F0B775;
-    min-height: 398px;
+    height: 398px;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .headingStyle {
