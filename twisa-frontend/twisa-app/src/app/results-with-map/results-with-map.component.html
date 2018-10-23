@@ -40,7 +40,7 @@
                         <div  class="label-entry">--PH.:--</div>
                     </div>
                     <div class="col-sm-4">
-                        <div [hidden]="!showHashtag" class="value-entry">#{{tweet.hashtag}}</div>
+                        <div [hidden]="!showHashtag" class="value-entry">{{displayHashtag(tweet.hashtag)}}</div>
                         <div  class="value-entry"></div>
                     </div>
                 </div>

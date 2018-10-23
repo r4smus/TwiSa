@@ -27,7 +27,7 @@ export class ResultsComponent implements OnInit {
   ngOnInit() {
     this.getTweets();
     this.formData = this.formDataService.getFormData();
-    this.showUser = this.formData.selectedAttributes.includes(SelectAttribute.User);
+    this.showUser = this.formData.selectedAttributes.includes(SelectAttribute.FollowerCount);
     this.showSource = this.formData.selectedAttributes.includes(SelectAttribute.TweetSource);
     this.showLanguage = this.formData.selectedAttributes.includes(SelectAttribute.Language);
     this.showHashtag = this.formData.selectedAttributes.includes(SelectAttribute.Hashtag);

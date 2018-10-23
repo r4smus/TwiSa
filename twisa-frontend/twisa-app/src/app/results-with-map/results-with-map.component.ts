@@ -30,7 +30,7 @@ export class ResultsWithMapComponent implements OnInit {
   ngOnInit() {
     this.getTweets();
     this.formData = this.formDataService.getFormData();
-    this.showUser = this.formData.selectedAttributes.includes(SelectAttribute.User);
+    this.showUser = this.formData.selectedAttributes.includes(SelectAttribute.FollowerCount);
     this.showSource = this.formData.selectedAttributes.includes(SelectAttribute.TweetSource);
     this.showLanguage = this.formData.selectedAttributes.includes(SelectAttribute.Language);
     this.showHashtag = this.formData.selectedAttributes.includes(SelectAttribute.Hashtag);    
@@ -74,5 +74,13 @@ export class ResultsWithMapComponent implements OnInit {
         return SourceType.Apple;
     }
   }
+
+  displayHashtag(hashtag: string): string {
+    if(hashtag === undefined || hashtag === null){
+        return '';
+    }else {
+        return '#' +hashtag;
+    }
+}
 
 }

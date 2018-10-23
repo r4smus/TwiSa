@@ -26,7 +26,7 @@ export class SelectAttributesComponent {
     constructor(private router: Router, private formDataService: FormDataService) {
         this.availableSelectAtts.push(SelectAttribute.TweetText);
         this.availableSelectAtts.push(SelectAttribute.TweetSource);
-        this.availableSelectAtts.push(SelectAttribute.User);
+        this.availableSelectAtts.push(SelectAttribute.FollowerCount);
         this.availableSelectAtts.push(SelectAttribute.Language);
         this.availableSelectAtts.push(SelectAttribute.Hashtag);
     }
