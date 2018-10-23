@@ -74,4 +74,12 @@ export class ResultsComponent implements OnInit {
     }
   }
 
+  displayHashtag(hashtag: string): string {
+      if(hashtag === undefined || hashtag === null){
+          return '';
+      }else {
+          return '#' +hashtag;
+      }
+  }
+
 }
