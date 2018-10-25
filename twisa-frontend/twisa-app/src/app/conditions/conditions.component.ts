@@ -13,12 +13,19 @@ import { LanguageType } from '../enums/language-type';
 export class ConditionsComponent implements OnInit {
 
   conditions: Conditions;
-  minValue = 0;
-  maxValue = 20000;
-  options: Options = {
+  minValueFollowerRange = 0;
+  maxValueFollowerRange = 2000000;
+  optionsFollowerRange: Options = {
     floor: 0,
-    ceil: 20000,
-    step: 100
+    ceil: 2000000,
+    step: 10
+  };
+  minValueTweetsCount = 0;
+  maxValueTweetsCount = 500000;
+  optionsTweetsCount: Options = {
+    floor: 0,
+    ceil: 500000,
+    step: 10
   };
   hashtag = '#';
 
@@ -36,7 +43,8 @@ export class ConditionsComponent implements OnInit {
       this.conditions.tweetLanguages.push(LanguageType.RU.shortForm);
       this.conditions.tweetLanguages.push(LanguageType.ES.shortForm);
     }
-    this.conditions.followerRange = [this.minValue, this.maxValue];
+    this.conditions.followerRange = [this.minValueFollowerRange, this.maxValueFollowerRange];
+    this.conditions.tweetCountRange = [this.minValueTweetsCount, this.maxValueTweetsCount];
     this.conditions.hashtag = this.hashtag;
     this.formDataService.setConditions(this.conditions);
     if (this.formDataService.showMap()) {

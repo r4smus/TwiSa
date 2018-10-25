@@ -23,11 +23,15 @@ export class ResultsComponent implements OnInit  {
     getTweets(): void {
         const minFollower = this.formDataService.getConditions().followerRange[0];
         const maxFollower = this.formDataService.getConditions().followerRange[1];
+
+        const minTweetsCount = this.formDataService.getConditions().tweetCountRange[0];
+        const maxTweetsCount = this.formDataService.getConditions().tweetCountRange[1];
     
         this.twisaApiService.getTweets()
         .then(tweets => this.tweets = tweets
         .filter(tweet => this.formDataService.getConditions().tweetLanguages.includes(tweet.lang))
         .filter(tweet => tweet.user.followers_count >= minFollower  && tweet.user.followers_count <= maxFollower)
+        .filter(tweet => tweet.user.statuses_count  >= minTweetsCount && tweet.user.statuses_count <= maxTweetsCount)
         .filter(tweet => (this.formDataService.getConditions().hashtag === '#' || this.formDataService.getConditions().hashtag === '') && true || this.formDataService.getConditions().hashtag === '#'+tweet.hashtag));
     }
 }

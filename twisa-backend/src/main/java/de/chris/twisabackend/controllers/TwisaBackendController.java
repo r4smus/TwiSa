@@ -29,7 +29,7 @@ public class TwisaBackendController {
     @Autowired
     UserRepository userRepository;
     
-    private static final boolean INIT_TEST_DATA = true;
+    private static final boolean INIT_TEST_DATA = false;
     
     @PostConstruct
 	public void  setup() {
@@ -70,11 +70,11 @@ public class TwisaBackendController {
     }
     
     private void initTestData1() {
-    	User user1 = new User(1,"Max Mustermann",123, 235, "http://pbs.twimg.com/profile_images/1009276895416877056/RBFyvqp8_normal.jpg");
-    	User user2 = new User(2,"Maria Gonzales",9999, 55, "http://pbs.twimg.com/profile_images/1009976350961266688/R0g8bJji_normal.jpg");
-    	User user3 = new User(3,"Daniel Baier",7215, 761, "http://pbs.twimg.com/profile_images/958440068569419776/ullmyXUd_normal.jpg");
-    	User user4 = new User(4,"Lisa Meier",3254, 167, "http://pbs.twimg.com/profile_images/1017291034051731457/riO2qkuy_normal.jpg");
-    	User user5 = new User(5,"Hans Wagner", 1457, 22, "http://pbs.twimg.com/profile_images/3234884062/268199d94c0d801bc48b7b7ac1dbdd3f_normal.jpeg");
+    	User user1 = new User(1,"Max Mustermann",1234, 23500, "http://pbs.twimg.com/profile_images/1009276895416877056/RBFyvqp8_normal.jpg");
+    	User user2 = new User(2,"Maria Gonzales",100000, 55, "http://pbs.twimg.com/profile_images/1009976350961266688/R0g8bJji_normal.jpg");
+    	User user3 = new User(3,"Daniel Baier",72015, 90610, "http://pbs.twimg.com/profile_images/958440068569419776/ullmyXUd_normal.jpg");
+    	User user4 = new User(4,"Lisa Meier",32540, 1670, "http://pbs.twimg.com/profile_images/1017291034051731457/riO2qkuy_normal.jpg");
+    	User user5 = new User(5,"Hans Wagner", 145007, 22, "http://pbs.twimg.com/profile_images/3234884062/268199d94c0d801bc48b7b7ac1dbdd3f_normal.jpeg");
     	
     	
     	Tweet tweet1 = new Tweet(1, "RT @dulce_marquezz: Holaaa #Torre https://t.co/dZseWPe4BL", "es", user2, 41.529356f, -2.545587f, "Twitter Web Client", "Torre");

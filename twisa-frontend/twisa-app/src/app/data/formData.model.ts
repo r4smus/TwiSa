@@ -5,6 +5,7 @@ export class FormData {
     tweetLanguages: Array<string> = [];
     showMap: boolean;
     followerRange: [number, number];
+    tweetCountRange: [number, number];
     hashtag: string;
 }
 
@@ -12,5 +13,6 @@ export class FormData {
 export class Conditions {
     tweetLanguages: Array<string> = [];
     followerRange: [number, number];
+    tweetCountRange: [number, number];
     hashtag: string;
 }

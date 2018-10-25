@@ -1,13 +1,14 @@
 <h3>Any restrictions?</h3>
 <div class="container conditionsBox">
     <div class="row centerRow">
-        <div class="col-sm-6">
+        <div class="col-sm-3">
             <div class="label-entry rowOffset">Tweet Language:</div>
             <div class="label-entry rowOffset">Hashtag:</div>
             <div class="label-entry rowOffset">User Name:</div>
             <div class="label-entry rowOffset sliderLabel">Follower Range:</div>
+            <div class="label-entry rowOffset sliderLabel">Tweets-Count Range:</div>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-9">
             <div class="value-entry rowOffset">
                 <img [ngClass]="status1 ? 'languageSelected' : 'selectLanguage'" src="assets/images/flags/flag_uk.png" (click)="addLanguage('en');status1=!status1">
                 <img [ngClass]="status2 ? 'languageSelected' : 'selectLanguage'" src="assets/images/flags/flag_germany.png" (click)="addLanguage('de');status2=!status2">
@@ -26,10 +27,14 @@
             </div>
             <div class="value-entry rowOffset">
                 <div class="inputCol">
-                    <ng5-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options"></ng5-slider>
+                    <ng5-slider [(value)]="minValueFollowerRange" [(highValue)]="maxValueFollowerRange" [options]="optionsFollowerRange"></ng5-slider>
                 </div>
             </div>
-
+            <div class="value-entry rowOffset">
+                <div class="inputCol">
+                    <ng5-slider [(value)]="minValueTweetsCount" [(highValue)]="maxValueTweetsCount" [options]="optionsTweetsCount"></ng5-slider>
+                </div>
+            </div>
         </div>
     </div>
 </div>
