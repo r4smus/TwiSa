@@ -18,6 +18,7 @@ import { ResultsWithMapComponent } from './results-with-map/results-with-map.com
 import { AgmCoreModule} from '@agm/core';
 import {NgxToggleModule} from 'ngx-toggle';
 import { Ng5SliderModule } from 'ng5-slider';
+import { TwitterItemComponent } from './twitter-item/twitter-item.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { Ng5SliderModule } from 'ng5-slider';
     SelectAttributesComponent,
     ConditionsComponent,
     ResultsComponent,
-    ResultsWithMapComponent
+    ResultsWithMapComponent,
+    TwitterItemComponent
   ],
   imports: [
     BrowserModule,
