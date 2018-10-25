@@ -20,16 +20,20 @@ public class User {
 	private int followers_count;
 	
 	@NotNull
+	private int statuses_count;
+	
+	@NotNull
 	private String profile_image_url;
 	
 	public User() {
 		
 	}
 
-	public User(int id, String name, int followers_count, String profile_image_url) {
+	public User(int id, String name, int followers_count, int statuses_count, String profile_image_url) {
 		this.id = id;
 		this.name = name;
 		this.followers_count = followers_count;
+		this.statuses_count = statuses_count;
 		this.profile_image_url = profile_image_url;
 	}
 
@@ -64,5 +68,12 @@ public class User {
 	public void setProfile_image_url(String profile_image_url) {
 		this.profile_image_url = profile_image_url;
 	}
-	
+
+	public int getStatuses_count() {
+		return statuses_count;
+	}
+
+	public void setStatuses_count(int statuses_count) {
+		this.statuses_count = statuses_count;
+	}
 }

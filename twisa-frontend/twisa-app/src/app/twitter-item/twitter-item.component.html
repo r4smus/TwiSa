@@ -1,15 +1,21 @@
 <div class="container twitterItem">
   <div class="row rowTwitterItem" [hidden]="!showUser">
-      <div class="col-sm-2 firstCol">
+      <div class="col-sm-1 firstCol">
           <img class="blockImage" src="{{tweet.user.profile_image_url}}">
       </div>
       <div class="col-sm-2">
           <div class="label-entry">Name:</div>
           <div class="label-entry">Follower:</div>
       </div>
-      <div class="col-sm-8">
+      <div class="col-sm-3">
           <div class="value-entry">{{tweet.user.name}}</div>
           <div class="value-entry">{{tweet.user.followers_count}}</div>
+      </div>
+      <div class="col-sm-3">
+          <div class="label-entry">Tweets-Count:</div>
+      </div>
+      <div class="col-sm-3">
+          <div class="value-entry">{{tweet.user.statuses_count}}</div>
       </div>
   </div>
   <div [hidden]="!showText" class="row rowTwitterItem">
