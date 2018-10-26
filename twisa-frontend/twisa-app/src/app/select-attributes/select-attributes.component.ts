@@ -28,6 +28,7 @@ export class SelectAttributesComponent {
         this.availableSelectAtts.push(SelectAttribute.TweetSource);
         this.availableSelectAtts.push(SelectAttribute.FollowerCount);
         this.availableSelectAtts.push(SelectAttribute.TweetsCount);
+        this.availableSelectAtts.push(SelectAttribute.CreatedAt);
         this.availableSelectAtts.push(SelectAttribute.Language);
         this.availableSelectAtts.push(SelectAttribute.Hashtag);
     }
