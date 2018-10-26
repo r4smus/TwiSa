@@ -1,5 +1,6 @@
 package de.chris.twisabackend.models;
 
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
@@ -23,17 +24,21 @@ public class User {
 	private int statuses_count;
 	
 	@NotNull
+	private String created_at;
+	
+	@NotNull
 	private String profile_image_url;
 	
 	public User() {
 		
 	}
 
-	public User(int id, String name, int followers_count, int statuses_count, String profile_image_url) {
+	public User(int id, String name, int followers_count, int statuses_count, String created_at, String profile_image_url) {
 		this.id = id;
 		this.name = name;
 		this.followers_count = followers_count;
 		this.statuses_count = statuses_count;
+		this.created_at = created_at;
 		this.profile_image_url = profile_image_url;
 	}
 
@@ -75,5 +80,13 @@ public class User {
 
 	public void setStatuses_count(int statuses_count) {
 		this.statuses_count = statuses_count;
+	}
+
+	public String getCreated_at() {
+		return created_at;
+	}
+
+	public void setCreated_at(String created_at) {
+		this.created_at = created_at;
 	}
 }

@@ -1,47 +1,49 @@
 <div class="container twitterItem">
-  <div class="row rowTwitterItem" [hidden]="!showUser">
-      <div class="col-sm-1 firstCol">
-          <img class="blockImage" src="{{tweet.user.profile_image_url}}">
-      </div>
-      <div class="col-sm-2">
-          <div class="label-entry">Name:</div>
-          <div class="label-entry">Follower:</div>
-      </div>
-      <div class="col-sm-3">
-          <div class="value-entry">{{tweet.user.name}}</div>
-          <div class="value-entry">{{tweet.user.followers_count}}</div>
-      </div>
-      <div class="col-sm-3">
-          <div class="label-entry">Tweets-Count:</div>
-      </div>
-      <div class="col-sm-3">
-          <div class="value-entry">{{tweet.user.statuses_count}}</div>
-      </div>
-  </div>
-  <div [hidden]="!showText" class="row rowTwitterItem">
-      <div class="col-sm-2 firstCol">
-          <img class="blockImage" src="assets/images/select_attributes/tweet-text.png">
-      </div>
-      <div class="col-sm-10">
-          <div class="section-entry">{{tweet.text}}</div>
-      </div>
-  </div>
-  <div [hidden]="!showLanguage && !showSource && !showHashtag" class="row rowTwitterItem">
-      <div class="col-sm-2">
-          <div [hidden]="!showLanguage" class="label-entry">Language:</div>
-          <div [hidden]="!showSource" class="label-entry">Source:</div>
-      </div>
-      <div class="col-sm-4">
-          <div [hidden]="!showLanguage" class="value-entry"><img title="{{getLanguageType(tweet.lang).name}}" src="{{getLanguageType(tweet.lang).imagePath}}"></div>
-          <div [hidden]="!showSource" class="value-entry"><img title="{{getSourceType(tweet.source).name}}" src="{{getSourceType(tweet.source).imagePath}}"></div>
-      </div>
-      <div class="col-sm-2">
-          <div [hidden]="!showHashtag" class="label-entry">Hashtag:</div>
-          <div  class="label-entry">--PH:--</div>
-      </div>
-      <div class="col-sm-4">
-          <div [hidden]="!showHashtag" class="value-entry">{{displayHashtag(tweet.hashtag)}}</div>
-          <div  class="value-entry"></div>
-      </div>
-  </div>
+    <div class="row rowTwitterItem" [hidden]="!showUser">
+        <div class="col-sm-1 firstCol">
+            <img class="blockImage" src="{{tweet.user.profile_image_url}}">
+        </div>
+        <div class="col-sm-2">
+            <div class="label-entry">Name:</div>
+            <div class="label-entry">Follower:</div>
+        </div>
+        <div class="col-sm-3">
+            <div class="value-entry">{{tweet.user.name}}</div>
+            <div class="value-entry">{{tweet.user.followers_count}}</div>
+        </div>
+        <div class="col-sm-3">
+            <div class="label-entry">Tweets-Count:</div>
+            <div class="label-entry">Created-At:</div>
+        </div>
+        <div class="col-sm-3">
+            <div class="value-entry">{{tweet.user.statuses_count}}</div>
+            <div class="value-entry">{{tweet.user.created_at | date:'dd/MM/yyyy'}}</div>
+        </div>
+    </div>
+    <div [hidden]="!showText" class="row rowTwitterItem">
+        <div class="col-sm-2 firstCol">
+            <img class="blockImage" src="assets/images/select_attributes/tweet-text.png">
+        </div>
+        <div class="col-sm-10">
+            <div class="section-entry">{{tweet.text}}</div>
+        </div>
+    </div>
+    <div [hidden]="!showLanguage && !showSource && !showHashtag" class="row rowTwitterItem">
+        <div class="col-sm-2">
+            <div [hidden]="!showLanguage" class="label-entry">Language:</div>
+            <div [hidden]="!showSource" class="label-entry">Source:</div>
+        </div>
+        <div class="col-sm-4">
+            <div [hidden]="!showLanguage" class="value-entry"><img title="{{getLanguageType(tweet.lang).name}}" src="{{getLanguageType(tweet.lang).imagePath}}"></div>
+            <div [hidden]="!showSource" class="value-entry"><img title="{{getSourceType(tweet.source).name}}" src="{{getSourceType(tweet.source).imagePath}}"></div>
+        </div>
+        <div class="col-sm-2">
+            <div [hidden]="!showHashtag" class="label-entry">Hashtag:</div>
+            <div class="label-entry">--PH:--</div>
+        </div>
+        <div class="col-sm-4">
+            <div [hidden]="!showHashtag" class="value-entry">{{displayHashtag(tweet.hashtag)}}</div>
+            <div class="value-entry"></div>
+        </div>
+    </div>
 </div>

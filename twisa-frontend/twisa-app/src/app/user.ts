@@ -4,5 +4,6 @@ export class User {
     public name: string;
     public followers_count: number;
     public statuses_count: number;
+    public created_at: string;
     public profile_image_url: string;
 }
