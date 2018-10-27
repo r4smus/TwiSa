@@ -7,6 +7,7 @@
             <div class="label-entry rowOffset">User Name:</div>
             <div class="label-entry rowOffset sliderLabel">Follower Range:</div>
             <div class="label-entry rowOffset sliderLabel">Tweets-Count Range:</div>
+            <div class="label-entry rowOffset sliderLabel">Created-At Range:</div>
         </div>
         <div class="col-sm-9">
             <div class="value-entry rowOffset">
@@ -33,6 +34,18 @@
             <div class="value-entry rowOffset">
                 <div class="inputCol">
                     <ng5-slider [(value)]="minValueTweetsCount" [(highValue)]="maxValueTweetsCount" [options]="optionsTweetsCount"></ng5-slider>
+                </div>
+            </div>
+            <div class="value-entry createdAtInput">
+                <div class="inputCol">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <input class="form-control input-md" id="fromCreatedAt" name="fromCreatedAt" [(ngModel)]="fromCreatedAt" type="text" placeholder="dd/mm/yyyy">
+                        </div>
+                        <div class="col-sm-6">
+                            <input class="form-control input-md" id="toCreatedAt" name="toCreatedAt" [(ngModel)]="toCreatedAt" type="text" placeholder="dd/mm/yyyy">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

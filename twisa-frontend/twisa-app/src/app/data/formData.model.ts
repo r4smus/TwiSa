@@ -6,6 +6,7 @@ export class FormData {
     showMap: boolean;
     followerRange: [number, number];
     tweetCountRange: [number, number];
+    createdAtRange: [string, string];
     hashtag: string;
 }
 
@@ -14,5 +15,6 @@ export class Conditions {
     tweetLanguages: Array<string> = [];
     followerRange: [number, number];
     tweetCountRange: [number, number];
+    createdAtRange: [string, string];
     hashtag: string;
 }

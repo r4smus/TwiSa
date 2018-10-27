@@ -30,6 +30,7 @@ export class FormDataService {
       tweetLanguages: this.formData.tweetLanguages,
       followerRange: this.formData.followerRange,
       tweetCountRange: this.formData.tweetCountRange,
+      createdAtRange: this.formData.createdAtRange,
       hashtag: this.formData.hashtag
     };
     return conditions;
@@ -39,6 +40,7 @@ export class FormDataService {
     this.formData.tweetLanguages = data.tweetLanguages;
     this.formData.followerRange = data.followerRange;
     this.formData.tweetCountRange = data.tweetCountRange;
+    this.formData.createdAtRange = data.createdAtRange;
     this.formData.hashtag = data.hashtag;
   }
 

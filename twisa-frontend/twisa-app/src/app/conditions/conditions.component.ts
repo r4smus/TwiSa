@@ -21,18 +21,20 @@ export class ConditionsComponent implements OnInit {
     step: 10
   };
   minValueTweetsCount = 0;
-  maxValueTweetsCount = 500000;
+  maxValueTweetsCount = 100000;
   optionsTweetsCount: Options = {
     floor: 0,
-    ceil: 500000,
+    ceil: 100000,
     step: 10
   };
   hashtag = '#';
+  fromCreatedAt: string;
+  toCreatedAt: string;
+
 
   constructor(private router: Router, private formDataService: FormDataService) { }
 
   ngOnInit() {
-    console.log(this.formDataService.getSelectAttributes());
     this.conditions = new Conditions();
   }
 
@@ -45,6 +47,14 @@ export class ConditionsComponent implements OnInit {
     }
     this.conditions.followerRange = [this.minValueFollowerRange, this.maxValueFollowerRange];
     this.conditions.tweetCountRange = [this.minValueTweetsCount, this.maxValueTweetsCount];
+    // ensure that there are no undefined values in the created at range.
+    // if(this.fromCreatedAt === undefined){
+    //   this.fromCreatedAt = '01/01/1900';
+    // }
+    // if(this.toCreatedAt === undefined) {
+    //   this.toCreatedAt = '01/01/2099';
+    // }
+    this.conditions.createdAtRange = [this.fromCreatedAt, this.toCreatedAt];
     this.conditions.hashtag = this.hashtag;
     this.formDataService.setConditions(this.conditions);
     if (this.formDataService.showMap()) {
