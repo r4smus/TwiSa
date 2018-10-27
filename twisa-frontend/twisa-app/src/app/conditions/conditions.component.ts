@@ -48,12 +48,12 @@ export class ConditionsComponent implements OnInit {
     this.conditions.followerRange = [this.minValueFollowerRange, this.maxValueFollowerRange];
     this.conditions.tweetCountRange = [this.minValueTweetsCount, this.maxValueTweetsCount];
     // ensure that there are no undefined values in the created at range.
-    // if(this.fromCreatedAt === undefined){
-    //   this.fromCreatedAt = '01/01/1900';
-    // }
-    // if(this.toCreatedAt === undefined) {
-    //   this.toCreatedAt = '01/01/2099';
-    // }
+    if(this.fromCreatedAt === undefined){
+      this.fromCreatedAt = '01/01/1900';
+    }
+    if(this.toCreatedAt === undefined) {
+      this.toCreatedAt = '01/01/2099';
+    }
     this.conditions.createdAtRange = [this.fromCreatedAt, this.toCreatedAt];
     this.conditions.hashtag = this.hashtag;
     this.formDataService.setConditions(this.conditions);
