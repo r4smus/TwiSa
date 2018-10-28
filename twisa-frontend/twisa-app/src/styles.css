@@ -55,18 +55,6 @@ h3 {
     width: 48px;
 }
 
-.rowTwitterItem {
-    background: white;
-    border-radius: 5px;
-    margin-top: 10px;
-    padding: 10px;
-}
-
-.rowTwitterItem .firstCol {
-    padding: 0px;
-}
-
-
 /* NAVBAR */
 
 nav ul {

@@ -70,11 +70,11 @@ public class TwisaBackendController {
     }
     
     private void initTestData1() {
-    	User user1 = new User(1,"Max Mustermann",1234, 23500, "Sun Oct 14 16:34:09 +0000 2012", "http://pbs.twimg.com/profile_images/1009276895416877056/RBFyvqp8_normal.jpg");
-    	User user2 = new User(2,"Maria Gonzales",100000, 55, "Fri Jul 13 05:00:56 +0000 2018", "http://pbs.twimg.com/profile_images/1009976350961266688/R0g8bJji_normal.jpg");
-    	User user3 = new User(3,"Daniel Baier",72015, 90610, "Thu Jul 12 20:18:36 +0000 2015", "http://pbs.twimg.com/profile_images/958440068569419776/ullmyXUd_normal.jpg");
-    	User user4 = new User(4,"Lisa Meier",32540, 1670, "Wed Jul 11 01:55:27 +0000 2010", "http://pbs.twimg.com/profile_images/1017291034051731457/riO2qkuy_normal.jpg");
-    	User user5 = new User(5,"Hans Wagner", 145007, 22, "Wed Jan 09 22:05:35 +0000 2013", "http://pbs.twimg.com/profile_images/3234884062/268199d94c0d801bc48b7b7ac1dbdd3f_normal.jpeg");
+    	User user1 = new User(1,"Max Mustermann",1234, 23500, "Sun Oct 14 16:34:09 +0000 2012", "Marvel/DC/Star Wars FAN", "http://pbs.twimg.com/profile_images/1009276895416877056/RBFyvqp8_normal.jpg");
+    	User user2 = new User(2,"Maria Gonzales",100000, 55, "Fri Jul 13 05:00:56 +0000 2018", "Una morena fatal de mirada transparente de esas que cuando te miran te agitan la vida y te vuelan la mente! Ay negrita tu corazon me grita â", "http://pbs.twimg.com/profile_images/1009976350961266688/R0g8bJji_normal.jpg");
+    	User user3 = new User(3,"Daniel Baier",72015, 90610, "Thu Jul 12 20:18:36 +0000 2015", "Fußballprofi", "http://pbs.twimg.com/profile_images/958440068569419776/ullmyXUd_normal.jpg");
+    	User user4 = new User(4,"Lisa Meier",32540, 1670, "Wed Jul 11 01:55:27 +0000 2010", "Großer FCA Fan. :)", "http://pbs.twimg.com/profile_images/1017291034051731457/riO2qkuy_normal.jpg");
+    	User user5 = new User(5,"Hans Wagner", 145007, 22, "Wed Jan 09 22:05:35 +0000 2013", "Official Twitter account of https://www.Forbes.com, homepage for the world's business leaders.", "http://pbs.twimg.com/profile_images/3234884062/268199d94c0d801bc48b7b7ac1dbdd3f_normal.jpeg");
     	
     	
     	Tweet tweet1 = new Tweet(1, "RT @dulce_marquezz: Holaaa #Torre https://t.co/dZseWPe4BL", "es", user2, 41.529356f, -2.545587f, "Twitter Web Client", "Torre");

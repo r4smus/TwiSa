@@ -26,6 +26,8 @@ public class User {
 	@NotNull
 	private String created_at;
 	
+	private String description;
+	
 	@NotNull
 	private String profile_image_url;
 	
@@ -33,12 +35,13 @@ public class User {
 		
 	}
 
-	public User(int id, String name, int followers_count, int statuses_count, String created_at, String profile_image_url) {
+	public User(int id, String name, int followers_count, int statuses_count, String created_at, String description, String profile_image_url) {
 		this.id = id;
 		this.name = name;
 		this.followers_count = followers_count;
 		this.statuses_count = statuses_count;
 		this.created_at = created_at;
+		this.description = description;
 		this.profile_image_url = profile_image_url;
 	}
 
@@ -88,5 +91,13 @@ public class User {
 
 	public void setCreated_at(String created_at) {
 		this.created_at = created_at;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 }

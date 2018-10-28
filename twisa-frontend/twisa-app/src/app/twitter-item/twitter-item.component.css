@@ -2,6 +2,27 @@
     max-width: 600px;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
     border-radius: 2px;
-    padding: 20px;
+    padding: 10px;
     background: #F0B775;
+}
+
+.value-entry-description {
+    line-height: 30px;
+}
+
+.userRow {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+.rowTwitterItem {
+    background: white;
+    border-radius: 5px;
+    margin: 10px 5px 10px 5px;
+    padding: 10px;
+}
+
+.rowTwitterItem .firstCol {
+    padding: 0px;
+    margin-top: 9px;
 }
