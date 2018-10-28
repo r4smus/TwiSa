@@ -7,7 +7,7 @@
 }
 
 .value-entry-description {
-    line-height: 30px;
+    margin-top: 5px;
 }
 
 .userRow {
@@ -25,4 +25,7 @@
 .rowTwitterItem .firstCol {
     padding: 0px;
     margin-top: 9px;
+}
+.rowTwitterItem .tweetTextIcon {
+    padding-left: 0px;
 }
