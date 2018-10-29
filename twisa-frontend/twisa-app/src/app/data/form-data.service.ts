@@ -31,7 +31,8 @@ export class FormDataService {
       followerRange: this.formData.followerRange,
       tweetCountRange: this.formData.tweetCountRange,
       createdAtRange: this.formData.createdAtRange,
-      hashtag: this.formData.hashtag
+      hashtag: this.formData.hashtag,
+      userName: this.formData.userName
     };
     return conditions;
   }
@@ -42,6 +43,7 @@ export class FormDataService {
     this.formData.tweetCountRange = data.tweetCountRange;
     this.formData.createdAtRange = data.createdAtRange;
     this.formData.hashtag = data.hashtag;
+    this.formData.userName = data.userName;
   }
 
   getFormData(): FormData {

@@ -30,6 +30,7 @@ export class ConditionsComponent implements OnInit {
   hashtag = '#';
   fromCreatedAt: string;
   toCreatedAt: string;
+  userName: string;
 
 
   constructor(private router: Router, private formDataService: FormDataService) { }
@@ -56,6 +57,7 @@ export class ConditionsComponent implements OnInit {
     }
     this.conditions.createdAtRange = [this.fromCreatedAt, this.toCreatedAt];
     this.conditions.hashtag = this.hashtag;
+    this.conditions.userName = this.userName;
     this.formDataService.setConditions(this.conditions);
     if (this.formDataService.showMap()) {
       this.router.navigate(['/resultsWithMap']);

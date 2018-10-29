@@ -8,6 +8,7 @@ export class FormData {
     tweetCountRange: [number, number];
     createdAtRange: [string, string];
     hashtag: string;
+    userName: string;
 }
 
 
@@ -17,4 +18,5 @@ export class Conditions {
     tweetCountRange: [number, number];
     createdAtRange: [string, string];
     hashtag: string;
+    userName: string;
 }
