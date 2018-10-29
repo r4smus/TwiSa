@@ -21,16 +21,24 @@ export class TwitterItemComponent implements OnInit {
   showLanguage: boolean;
   showHashtag: boolean;
   showText: boolean;
+  showFollowerCount: boolean;
+  showTweetsCount: boolean;
+  showCreatedAt: boolean;
+  showDescription: boolean;
 
   constructor(private formDataService: FormDataService ) { }
 
   ngOnInit() {
     this.formData = this.formDataService.getFormData();
-    this.showUser = this.formData.selectedAttributes.includes(SelectAttribute.FollowerCount);
+    this.showUser = this.checkShowUser();
     this.showSource = this.formData.selectedAttributes.includes(SelectAttribute.TweetSource);
     this.showLanguage = this.formData.selectedAttributes.includes(SelectAttribute.Language);
     this.showHashtag = this.formData.selectedAttributes.includes(SelectAttribute.Hashtag);
     this.showText = this.formData.selectedAttributes.includes(SelectAttribute.TweetText);
+    this.showFollowerCount = this.formData.selectedAttributes.includes(SelectAttribute.FollowerCount);
+    this.showTweetsCount = this.formData.selectedAttributes.includes(SelectAttribute.TweetsCount);
+    this.showCreatedAt = this.formData.selectedAttributes.includes(SelectAttribute.CreatedAt);
+    this.showDescription = this.formData.selectedAttributes.includes(SelectAttribute.Description);
     console.log(this.formData);
     console.log(this.formDataService.getConditions());
   }
@@ -70,6 +78,18 @@ export class TwitterItemComponent implements OnInit {
       }else {
           return '#' +hashtag;
       }
+  }
+
+  private checkShowUser(): boolean {
+      if(this.formData.selectedAttributes.includes(SelectAttribute.FollowerCount))
+        return true;
+      if(this.formData.selectedAttributes.includes(SelectAttribute.TweetsCount))
+        return true;
+      if(this.formData.selectedAttributes.includes(SelectAttribute.Description))
+        return true;
+      if(this.formData.selectedAttributes.includes(SelectAttribute.CreatedAt))
+        return true;
+      return false;
   }
 
 
