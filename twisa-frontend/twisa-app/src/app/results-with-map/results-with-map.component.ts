@@ -40,7 +40,7 @@ export class ResultsWithMapComponent implements OnInit {
     .filter(tweet => tweet.user.followers_count >= minFollower  && tweet.user.followers_count <= maxFollower)
     .filter(tweet => tweet.user.statuses_count  >= minTweetsCount && tweet.user.statuses_count <= maxTweetsCount)
     .filter(tweet => new Date(tweet.user.created_at)  >= fromCreatedAt && new Date(tweet.user.created_at) <= toCreatedAt)
-    .filter(tweet => tweet.user.name.includes(this.formDataService.getConditions().userName))
+    .filter(tweet => (this.formDataService.getConditions().userName === undefined || this.formDataService.getConditions().userName === '') && true || tweet.user.name.includes(this.formDataService.getConditions().userName))
     .filter(tweet => (this.formDataService.getConditions().hashtag === '#' || this.formDataService.getConditions().hashtag === '') && true || this.formDataService.getConditions().hashtag === '#'+tweet.hashtag));
 }
 }
