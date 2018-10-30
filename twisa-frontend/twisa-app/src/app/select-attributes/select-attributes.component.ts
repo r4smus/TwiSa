@@ -11,7 +11,8 @@ import { Router } from '@angular/router';
 export class SelectAttributesComponent {
     availableSelectAtts: Array<SelectAttribute> = [];
     droppedSelectAtts: Array<SelectAttribute> = [];
-    showErrorMessage: boolean;
+    showErrorMessageNoAttributesSelected: boolean;
+    showErrorMessageResultsOption: boolean;
     toogleSwitchModel: any = {
         onColor: 'success',
         offColor: 'danger',
@@ -52,12 +53,16 @@ export class SelectAttributesComponent {
     }
 
     saveAndRoute(): void {
-        if (this.droppedSelectAtts.length > 0) {
-          this.formDataService.setSelectAttributes(this.droppedSelectAtts);
-          this.formDataService.setShowMap(this.toogleSwitchModel.value);
-          this.router.navigate(['/conditions']);
-        } else {
-          this.showErrorMessage = true;
+        if (this.droppedSelectAtts.length > 0 && this.toogleSwitchModel.value != null) {
+            this.formDataService.setSelectAttributes(this.droppedSelectAtts);
+            this.formDataService.setShowMap(this.toogleSwitchModel.value);
+            this.router.navigate(['/conditions']);
+        } else if(this.droppedSelectAtts.length === 0) {
+            this.showErrorMessageResultsOption = false;
+            this.showErrorMessageNoAttributesSelected = true;
+        } else if(this.toogleSwitchModel.value === null || this.toogleSwitchModel.value === undefined) {
+            this.showErrorMessageNoAttributesSelected = false;
+            this.showErrorMessageResultsOption = true;
         }
     }
 

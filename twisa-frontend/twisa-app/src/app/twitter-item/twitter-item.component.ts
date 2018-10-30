@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { TwisaApiService } from '../twisa-api.service';
 import { FormDataService } from '../data/form-data.service';
 import { FormData } from '../data/formData.model';
 import { SourceType } from '../enums/source-type';
