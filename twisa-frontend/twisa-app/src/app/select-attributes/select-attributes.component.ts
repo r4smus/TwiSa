@@ -9,7 +9,8 @@ import { Router } from '@angular/router';
     styleUrls: ['./select-attributes.component.css']
 })
 export class SelectAttributesComponent {
-    availableSelectAtts: Array<SelectAttribute> = [];
+    generalSelectAtts: Array<SelectAttribute> = [];
+    userSelectAtts: Array<SelectAttribute> = [];
     droppedSelectAtts: Array<SelectAttribute> = [];
     showErrorMessageNoAttributesSelected: boolean;
     showErrorMessageResultsOption: boolean;
@@ -25,14 +26,15 @@ export class SelectAttributesComponent {
       tootleSwitchText = 'Show tweets on a map, or as a list?';
 
     constructor(private router: Router, private formDataService: FormDataService) {
-        this.availableSelectAtts.push(SelectAttribute.TweetText);
-        this.availableSelectAtts.push(SelectAttribute.TweetSource);
-        this.availableSelectAtts.push(SelectAttribute.FollowerCount);
-        this.availableSelectAtts.push(SelectAttribute.TweetsCount);
-        this.availableSelectAtts.push(SelectAttribute.CreatedAt);
-        this.availableSelectAtts.push(SelectAttribute.Description);
-        this.availableSelectAtts.push(SelectAttribute.Language);
-        this.availableSelectAtts.push(SelectAttribute.Hashtag);
+        this.generalSelectAtts.push(SelectAttribute.TweetText);
+        this.generalSelectAtts.push(SelectAttribute.TweetSource);
+        this.generalSelectAtts.push(SelectAttribute.Language);
+        this.generalSelectAtts.push(SelectAttribute.Hashtag);
+
+        this.userSelectAtts.push(SelectAttribute.FollowerCount);
+        this.userSelectAtts.push(SelectAttribute.TweetsCount);
+        this.userSelectAtts.push(SelectAttribute.CreatedAt);
+        this.userSelectAtts.push(SelectAttribute.Description);
     }
 
     addToDroppedSelectAtts($event: any) {
@@ -67,7 +69,7 @@ export class SelectAttributesComponent {
     }
 
     addAllAttributes(): void {
-        this.droppedSelectAtts = this.availableSelectAtts;
+        this.droppedSelectAtts = [ ...this.generalSelectAtts, ...this.userSelectAtts];
     }
 
     deleteAllAttributes(): void {

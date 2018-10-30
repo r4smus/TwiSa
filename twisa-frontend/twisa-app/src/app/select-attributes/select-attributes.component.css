@@ -3,13 +3,24 @@ li {
     padding: 5px;
 }
 
-.attributeBox li img {
+.availibleAttributeBox li img {
     height: 40px;
 }
 
-.attributeBox {
+.selectedAttributeBox li img {
+    height: 40px;
+}
+
+.availibleAttributeBox {
     background: #F0B775;
-    height: 398px;
+    height: 200px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.selectedAttributeBox {
+    background: #F0B775;
+    height: 464px;
     overflow-y: scroll;
     overflow-x: hidden;
 }

@@ -1,22 +1,37 @@
 <h3>Please Drag & Drop the attributes of a Tweet, which you want to see on the results page.</h3>
 <div class="row centerRow">
     <div class="col-sm-3">
-        <div class="panel panel-success">
-            <div class="panel-heading headingStyle">Available Attributes</div>
-            <div class="panel-body attributeBox">
-                <ul *ngFor="let attribute of availableSelectAtts" class="panel panel-default" dnd-draggable [dragEnabled]="alreadyDraggedAndDropped(attribute)" [dragData]="attribute" [dropZones]="['demo1']">
-                    <li>
-                        <img src="{{attribute.imagePath}}">
-                        <span>{{attribute.name}}</span>
-                    </li>
-                </ul>
+        <div class="row">
+            <div class="panel panel-success">
+                <div class="panel-heading headingStyle">General Attributes</div>
+                <div class="panel-body availibleAttributeBox">
+                    <ul *ngFor="let attribute of generalSelectAtts" class="panel panel-default" dnd-draggable [dragEnabled]="alreadyDraggedAndDropped(attribute)" [dragData]="attribute" [dropZones]="['demo1']">
+                        <li>
+                            <img src="{{attribute.imagePath}}">
+                            <span>{{attribute.name}}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="panel panel-success">
+                    <div class="panel-heading headingStyle">User Attributes</div>
+                    <div class="panel-body availibleAttributeBox">
+                        <ul *ngFor="let attribute of userSelectAtts" class="panel panel-default" dnd-draggable [dragEnabled]="alreadyDraggedAndDropped(attribute)" [dragData]="attribute" [dropZones]="['demo1']">
+                            <li>
+                                <img src="{{attribute.imagePath}}">
+                                <span>{{attribute.name}}</span>
+                            </li>
+                        </ul>
+                    </div>
             </div>
         </div>
     </div>
     <div class="col-sm-3">
         <div dnd-droppable (onDropSuccess)="addToDroppedSelectAtts($event)" [dropZones]="['demo1']" class="panel panel-info">
             <div class="panel-heading headingStyle">Selected Attributes</div>
-            <div class="panel-body attributeBox">
+            <div class="panel-body selectedAttributeBox">
                 <ul *ngFor="let attribute of droppedSelectAtts" class="panel panel-default">
                     <li>
                         <img src="{{attribute.imagePath}}">
