@@ -11,10 +11,13 @@
         </div>
         <div class="col-sm-9">
             <div class="value-entry rowOffset">
-                <img [ngClass]="status1 ? 'languageSelected' : 'selectLanguage'" src="assets/images/flags/flag_uk.png" (click)="addLanguage('en');status1=!status1">
-                <img [ngClass]="status2 ? 'languageSelected' : 'selectLanguage'" src="assets/images/flags/flag_germany.png" (click)="addLanguage('de');status2=!status2">
-                <img [ngClass]="status3 ? 'languageSelected' : 'selectLanguage'" src="assets/images/flags/flag_spain.png" (click)="addLanguage('es');status3=!status3">
-                <img [ngClass]="status4 ? 'languageSelected' : 'selectLanguage'" src="assets/images/flags/flag_russia.png" (click)="addLanguage('ru');status4=!status4">
+                <img [ngClass]="status1 ? 'languageSelected' : 'selectLanguage'" title="English" src="assets/images/flags/flag_uk.png" (click)="addLanguage('en');status1=!status1">
+                <img [ngClass]="status2 ? 'languageSelected' : 'selectLanguage'" title="German" src="assets/images/flags/flag_germany.png" (click)="addLanguage('de');status2=!status2">
+                <img [ngClass]="status3 ? 'languageSelected' : 'selectLanguage'" title="Spanish" src="assets/images/flags/flag_spain.png" (click)="addLanguage('es');status3=!status3">
+                <img [ngClass]="status4 ? 'languageSelected' : 'selectLanguage'" title="Russian" src="assets/images/flags/flag_russia.png" (click)="addLanguage('ru');status4=!status4">
+                <img [ngClass]="status5 ? 'languageSelected' : 'selectLanguage'" title="French" src="assets/images/flags/flag_france.png" (click)="addLanguage('fr');status4=!status5">
+                <img [ngClass]="status6 ? 'languageSelected' : 'selectLanguage'" title="Italian" src="assets/images/flags/flag_italy.png" (click)="addLanguage('it');status4=!status6">
+                <img [ngClass]="status7 ? 'languageSelected' : 'selectLanguage'" title="Portuguese" src="assets/images/flags/flag_portugal.png" (click)="addLanguage('po');status4=!status7">
             </div>
             <div class="value-entry rowOffset">
                 <div class="inputCol">
