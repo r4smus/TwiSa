@@ -1,5 +1,4 @@
 export class LanguageType {
-    private static AllValues: { [name: string]: LanguageType } = {};
 
     static readonly DE = new LanguageType(1, 'German', 'assets/images/flags/flag_germany.png', 'de');
     static readonly EN = new LanguageType(2, 'English', 'assets/images/flags/flag_uk.png', 'en');
@@ -11,7 +10,8 @@ export class LanguageType {
 
     private constructor(public readonly id: number, public readonly name: string, public readonly imagePath: string, public readonly shortForm) {}
 
-    public static parseEnum(data: string): LanguageType {
-        return LanguageType.AllValues[data];
+    public static AllValues(): LanguageType[] {
+        return [LanguageType.DE, LanguageType.EN, LanguageType.RU, LanguageType.ES, LanguageType.FR, LanguageType.IT, LanguageType.PO];
     }
+
 }
