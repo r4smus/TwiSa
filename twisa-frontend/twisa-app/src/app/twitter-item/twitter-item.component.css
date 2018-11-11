@@ -29,3 +29,23 @@
 .rowTwitterItem .tweetTextIcon {
     padding-left: 0px;
 }
+
+.rowTwitterItem .userAttLabel {
+    background: #D65652;
+    margin-top: -10px;
+    margin-left: -10px;
+    width: 100px;
+    border-top-left-radius: inherit;
+    color: white;
+    padding: 3px;
+}
+
+.rowTwitterItem .generalAttLabel {
+    background: #D65652;
+    margin-top: -10px;
+    margin-left: -10px;
+    width: 120px;
+    border-top-left-radius: inherit;
+    color: white;
+    padding: 3px;
+}

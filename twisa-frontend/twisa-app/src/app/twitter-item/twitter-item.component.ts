@@ -24,6 +24,8 @@ export class TwitterItemComponent implements OnInit {
   showTweetsCount: boolean;
   showCreatedAt: boolean;
   showDescription: boolean;
+  userAttLabelText = 'User Attributes';
+  generalAttLabelText = 'General Attributes';
 
   constructor(private formDataService: FormDataService ) { }
 

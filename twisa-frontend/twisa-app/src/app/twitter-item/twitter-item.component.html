@@ -1,5 +1,8 @@
 <div class="container twitterItem">
     <div class="rowTwitterItem" [hidden]="!showUser">
+        <div class="row userRow userAttLabel">
+            {{userAttLabelText}}
+        </div>
         <div class="row userRow">
             <div class="col-sm-1 firstCol">
                 <img class="blockImage" src="{{tweet.user.profile_image_url}}">
@@ -40,6 +43,9 @@
         </div>
     </div>
     <div [hidden]="!showLanguage && !showSource && !showHashtag" class="row rowTwitterItem">
+        <div class="row generalAttLabel">
+                {{generalAttLabelText}}
+        </div>
         <div class="col-sm-2">
             <div [hidden]="!showLanguage" class="label-entry">Language:</div>
             <div [hidden]="!showSource" class="label-entry">Source:</div>
