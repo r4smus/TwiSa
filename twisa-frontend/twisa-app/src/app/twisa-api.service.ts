@@ -7,6 +7,7 @@ import { Tweet } from './tweet';
 export class TwisaApiService {
 
   private baseUrl = 'http://localhost:8080/twisa-api';
+  private jsonFile =  'assets/tweets.json';
 
   constructor(private http: Http) { }
 
@@ -17,9 +18,17 @@ export class TwisaApiService {
       .catch(this.handleError);
   }
 
+  getTweetsFromJsonFile () {
+    return this.http.get(this.jsonFile)
+      .toPromise()
+      .then(response => response.json() as Tweet[])
+      .catch(this.handleError);
+  }
+
   private handleError(error: any): Promise<any> {
     console.error('Some error occured', error);
     return Promise.reject(error.message || error);
   }
+  
 
 }
