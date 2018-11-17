@@ -40,8 +40,6 @@ export class TwitterItemComponent implements OnInit {
     this.showTweetsCount = this.formData.selectedAttributes.includes(SelectAttribute.TweetsCount);
     this.showCreatedAt = this.formData.selectedAttributes.includes(SelectAttribute.CreatedAt);
     this.showDescription = this.formData.selectedAttributes.includes(SelectAttribute.Description);
-    console.log(this.formData);
-    console.log(this.formDataService.getConditions());
   }
 
 
@@ -58,18 +56,20 @@ export class TwitterItemComponent implements OnInit {
         case 'es':
             return LanguageType.ES;
         default:
-            console.log('No LanguageType found for ( ' + lang + ')');
             break;
     }
   }
 
   getSourceType(source: string): SourceType {
+    console.log(source);
     if (source.includes('Twitter Web Client')) {
         return SourceType.WebClient;
     } else if (source.includes('Twitter for Android')) {
         return SourceType.Android;
     } else if (source.includes('Twitter for iPhone')) {
         return SourceType.Apple;
+    } else {
+        return SourceType.NotFound;
     }
   }
 
