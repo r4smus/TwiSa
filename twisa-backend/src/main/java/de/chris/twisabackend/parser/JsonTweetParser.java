@@ -2,6 +2,7 @@ package de.chris.twisabackend.parser;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -23,7 +24,9 @@ public class JsonTweetParser {
 		String pattern6 = "\"in_reply_to_screen_name\":(null|\"\\w+\"),";
 		String pattern7 = "\"screen_name\":(null|\"\\w+\"),";
 		String pattern8 = "\"in_reply_to_user_id_str\":(null|(\"\\d+\")),";
-		String pattern9 = "\"url\":(null|\".+\"),";
+		//TODO: this reg ex is wrong, it selects too much
+		// String pattern9 = "\"url\":(null|\".+\"),";
+		String pattern10 = "\"translator_type\":\"(\\w+)\",\"protected\":(\\w+),\"verified\":(\\w+),";
 		
 		
 //		
@@ -38,7 +41,12 @@ public class JsonTweetParser {
 		// Open the file
 		FileInputStream fstream = new FileInputStream("src\\main\\java\\de\\chris\\twisabackend\\parser\\tweets_12.07.18_100_tweets.txt");
 		BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
-		FileOutputStream foutputStream = new FileOutputStream("src\\main\\java\\de\\chris\\twisabackend\\parser\\tweets_parsed.json");
+		
+		File outputFilename = new File("src\\main\\java\\de\\chris\\twisabackend\\parser\\tweets_parsed.json");
+		if (outputFilename.exists()){
+		     outputFilename.delete();
+		 } 
+		FileOutputStream foutputStream = new FileOutputStream(outputFilename);
 
 		String strLine;
 		
@@ -60,7 +68,8 @@ public class JsonTweetParser {
 		  strLine = strLine.replaceAll(pattern6, "");
 		  strLine = strLine.replaceAll(pattern7, "");
 		  strLine = strLine.replaceAll(pattern8, "");
-		  strLine = strLine.replaceAll(pattern9, "");
+		  //strLine = strLine.replaceAll(pattern9, "");
+		  strLine = strLine.replaceAll(pattern10, "");
 		  
 		  
 		  System.out.println (strLine);
