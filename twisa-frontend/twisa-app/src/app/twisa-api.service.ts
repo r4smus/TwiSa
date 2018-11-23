@@ -8,8 +8,7 @@ export class TwisaApiService {
 
   private baseUrl = 'http://localhost:8080/twisa-api';
   // private jsonFile =  'assets/tweets.json';
-  private jsonFile =  'assets/tweets_12.07.18_small.json';
-  // private jsonFile =  'assets/tweets_12.07.18_100_tweets.json';
+  private jsonFile =  'assets/newParsedTweets.json';
   // private jsonFile =  'assets/tweets_parsed.json';
 
   constructor(private http: Http) { }

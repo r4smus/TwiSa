@@ -34,7 +34,7 @@ export class ResultsWithMapComponent implements OnInit {
     console.log("input_fromCreatedAt" +fromCreatedAt);
     console.log("input_toCreatedAt" +toCreatedAt);
 
-    this.twisaApiService.getTweets()
+    this.twisaApiService.getTweetsFromJsonFile()
     .then(tweets => this.tweets = tweets
     .filter(tweet => this.formDataService.getConditions().tweetLanguages.includes(tweet.lang))
     .filter(tweet => tweet.user.followers_count >= minFollower  && tweet.user.followers_count <= maxFollower)

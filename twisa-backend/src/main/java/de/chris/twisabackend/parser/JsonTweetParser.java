@@ -24,9 +24,9 @@ public class JsonTweetParser {
 		String pattern6 = "\"in_reply_to_screen_name\":(null|\"\\w+\"),";
 		String pattern7 = "\"screen_name\":(null|\"\\w+\"),";
 		String pattern8 = "\"in_reply_to_user_id_str\":(null|(\"\\d+\")),";
-		//TODO: this reg ex is wrong, it selects too much
-		// String pattern9 = "\"url\":(null|\".+\"),";
+		String pattern9 = "(\"url\":\"(http|ftp|https)://([\\w_-]+(?:(?:\\.[\\w_-]+)+))([\\w.,@?^=%&:/~+#-]*[\\w@?^=%&/~+#-])\",)|\"url\":null,";
 		String pattern10 = "\"translator_type\":\"(\\w+)\",\"protected\":(\\w+),\"verified\":(\\w+),";
+		String pattern11 = "\"friends_count\":(\\d+),\"listed_count\":(\\d+),\"favourites_count\":(\\d+),";
 		
 		
 //		
@@ -39,7 +39,7 @@ public class JsonTweetParser {
 //		System.out.println(System.getProperty("user.dir"));
 		
 		// Open the file
-		FileInputStream fstream = new FileInputStream("src\\main\\java\\de\\chris\\twisabackend\\parser\\tweets_12.07.18_100_tweets.txt");
+		FileInputStream fstream = new FileInputStream("src\\main\\java\\de\\chris\\twisabackend\\parser\\200_tweets_unparsed.txt");
 		BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
 		
 		File outputFilename = new File("src\\main\\java\\de\\chris\\twisabackend\\parser\\tweets_parsed.json");
@@ -68,8 +68,9 @@ public class JsonTweetParser {
 		  strLine = strLine.replaceAll(pattern6, "");
 		  strLine = strLine.replaceAll(pattern7, "");
 		  strLine = strLine.replaceAll(pattern8, "");
-		  //strLine = strLine.replaceAll(pattern9, "");
+		  strLine = strLine.replaceAll(pattern9, "");
 		  strLine = strLine.replaceAll(pattern10, "");
+		  strLine = strLine.replaceAll(pattern11, "");
 		  
 		  
 		  System.out.println (strLine);
