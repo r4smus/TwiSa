@@ -17,7 +17,6 @@ export class ResultsComponent implements OnInit  {
 
     ngOnInit() {
         this.getTweets();
-        console.log(this.getTweets());
     }
 
     getTweets(): void {
@@ -29,8 +28,6 @@ export class ResultsComponent implements OnInit  {
 
         const fromCreatedAt = new Date(this.formDataService.getConditions().createdAtRange[0]);
         const toCreatedAt = new Date(this.formDataService.getConditions().createdAtRange[1]);
-        console.log("input_fromCreatedAt" +fromCreatedAt);
-        console.log("input_toCreatedAt" +toCreatedAt);
     
         this.twisaApiService.getTweetsFromJsonFile()
         .then(tweets => this.tweets = tweets
@@ -41,4 +38,5 @@ export class ResultsComponent implements OnInit  {
         .filter(tweet => (this.formDataService.getConditions().userName === undefined || this.formDataService.getConditions().userName === '') && true || tweet.user.name.includes(this.formDataService.getConditions().userName))
         .filter(tweet => (this.formDataService.getConditions().hashtag === '#' || this.formDataService.getConditions().hashtag === '') && true || this.formDataService.getConditions().hashtag === '#'+tweet.hashtag));
     }
+    
 }
