@@ -51,6 +51,7 @@ export class ConditionsComponent implements OnInit {
       this.conditions.sourceTypes.push(SourceType.WebClient.name);
       this.conditions.sourceTypes.push(SourceType.Android.name);
       this.conditions.sourceTypes.push(SourceType.Apple.name);
+      this.conditions.sourceTypes.push(SourceType.NotFound.name);
     }
     this.conditions.followerRange = [this.minValueFollowerRange, this.maxValueFollowerRange];
     this.conditions.tweetCountRange = [this.minValueTweetsCount, this.maxValueTweetsCount];
