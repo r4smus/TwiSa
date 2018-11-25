@@ -28,6 +28,7 @@ export class FormDataService {
   getConditions(): Conditions {
     const conditions: Conditions = {
       tweetLanguages: this.formData.tweetLanguages,
+      sourceTypes: this.formData.sourceTypes,
       followerRange: this.formData.followerRange,
       tweetCountRange: this.formData.tweetCountRange,
       createdAtRange: this.formData.createdAtRange,
@@ -39,6 +40,7 @@ export class FormDataService {
 
   setConditions(data: Conditions) {
     this.formData.tweetLanguages = data.tweetLanguages;
+    this.formData.sourceTypes = data.sourceTypes;
     this.formData.followerRange = data.followerRange;
     this.formData.tweetCountRange = data.tweetCountRange;
     this.formData.createdAtRange = data.createdAtRange;

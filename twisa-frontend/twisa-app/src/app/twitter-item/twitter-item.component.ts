@@ -43,7 +43,7 @@ export class TwitterItemComponent implements OnInit {
   }
 
 
-  
+
 
   getLanguageType(lang: string): LanguageType {
     switch (lang) {
@@ -61,7 +61,6 @@ export class TwitterItemComponent implements OnInit {
   }
 
   getSourceType(source: string): SourceType {
-    console.log(source);
     if (source.includes('Twitter Web Client')) {
         return SourceType.WebClient;
     } else if (source.includes('Twitter for Android')) {
@@ -74,22 +73,26 @@ export class TwitterItemComponent implements OnInit {
   }
 
   displayHashtag(hashtag: string): string {
-      if(hashtag === undefined || hashtag === null){
+      if (hashtag === undefined || hashtag === null) {
           return '';
-      }else {
-          return '#' +hashtag;
+      } else {
+          return '#' + hashtag;
       }
   }
 
   private checkShowUser(): boolean {
-      if(this.formData.selectedAttributes.includes(SelectAttribute.FollowerCount))
+      if (this.formData.selectedAttributes.includes(SelectAttribute.FollowerCount)) {
         return true;
-      if(this.formData.selectedAttributes.includes(SelectAttribute.TweetsCount))
+      }
+      if (this.formData.selectedAttributes.includes(SelectAttribute.TweetsCount)) {
         return true;
-      if(this.formData.selectedAttributes.includes(SelectAttribute.Description))
+      }
+      if (this.formData.selectedAttributes.includes(SelectAttribute.Description)) {
         return true;
-      if(this.formData.selectedAttributes.includes(SelectAttribute.CreatedAt))
+      }
+      if (this.formData.selectedAttributes.includes(SelectAttribute.CreatedAt)) {
         return true;
+      }
       return false;
   }
 

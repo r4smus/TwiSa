@@ -8,7 +8,8 @@ export class LanguageType {
     static readonly IT = new LanguageType(6, 'Italian', 'assets/images/flags/flag_italy.png', 'it');
     static readonly PO = new LanguageType(7, 'Portuguese', 'assets/images/flags/flag_portugal.png', 'po');
 
-    private constructor(public readonly id: number, public readonly name: string, public readonly imagePath: string, public readonly shortForm) {}
+    private constructor(public readonly id: number, public readonly name: string,
+        public readonly imagePath: string, public readonly shortForm) {}
 
     public static AllValues(): LanguageType[] {
         return [LanguageType.DE, LanguageType.EN, LanguageType.RU, LanguageType.ES, LanguageType.FR, LanguageType.IT, LanguageType.PO];

@@ -3,6 +3,7 @@
     <div class="row centerRow">
         <div class="col-sm-3">
             <div class="label-entry rowOffset">Tweet Language:</div>
+            <div class="label-entry rowOffset">Tweet Source:</div>
             <div class="label-entry rowOffset">Hashtag:</div>
             <div class="label-entry rowOffset">User Name:</div>
             <div class="label-entry rowOffset sliderLabel">Follower Range:</div>
@@ -15,9 +16,14 @@
                 <img [ngClass]="status2 ? 'languageSelected' : 'selectLanguage'" title="German" src="assets/images/flags/flag_germany.png" (click)="addLanguage('de');status2=!status2">
                 <img [ngClass]="status3 ? 'languageSelected' : 'selectLanguage'" title="Spanish" src="assets/images/flags/flag_spain.png" (click)="addLanguage('es');status3=!status3">
                 <img [ngClass]="status4 ? 'languageSelected' : 'selectLanguage'" title="Russian" src="assets/images/flags/flag_russia.png" (click)="addLanguage('ru');status4=!status4">
-                <img [ngClass]="status5 ? 'languageSelected' : 'selectLanguage'" title="French" src="assets/images/flags/flag_france.png" (click)="addLanguage('fr');status4=!status5">
-                <img [ngClass]="status6 ? 'languageSelected' : 'selectLanguage'" title="Italian" src="assets/images/flags/flag_italy.png" (click)="addLanguage('it');status4=!status6">
-                <img [ngClass]="status7 ? 'languageSelected' : 'selectLanguage'" title="Portuguese" src="assets/images/flags/flag_portugal.png" (click)="addLanguage('po');status4=!status7">
+                <img [ngClass]="status5 ? 'languageSelected' : 'selectLanguage'" title="French" src="assets/images/flags/flag_france.png" (click)="addLanguage('fr');status5=!status5">
+                <img [ngClass]="status6 ? 'languageSelected' : 'selectLanguage'" title="Italian" src="assets/images/flags/flag_italy.png" (click)="addLanguage('it');status6=!status6">
+                <img [ngClass]="status7 ? 'languageSelected' : 'selectLanguage'" title="Portuguese" src="assets/images/flags/flag_portugal.png" (click)="addLanguage('po');status7=!status7">
+            </div>
+            <div class="value-entry rowOffset">
+                <img [ngClass]="status8 ? 'languageSelected' : 'selectLanguage'" title="Twitter Web Client" src="assets/images/source_types/web_client.png" (click)="addSourceType('Twitter Web Client');status8=!status8">
+                <img [ngClass]="status9 ? 'languageSelected' : 'selectLanguage'" title="Twitter for Android" src="assets/images/source_types/android.png" (click)="addSourceType('Twitter for Android');status9=!status9">
+                <img [ngClass]="status10 ? 'languageSelected' : 'selectLanguage'" title="Twitter for iPhone" src="assets/images/source_types/apple.png" (click)="addSourceType('Twitter for iPhone');status10=!status10">
             </div>
             <div class="value-entry rowOffset">
                 <div class="inputCol">

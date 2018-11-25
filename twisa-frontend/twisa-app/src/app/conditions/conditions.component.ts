@@ -4,6 +4,7 @@ import { Conditions } from '../data/formData.model';
 import { Router } from '@angular/router';
 import { Options } from 'ng5-slider';
 import { LanguageType } from '../enums/language-type';
+import { SourceType } from '../enums/source-type';
 
 @Component({
   selector: 'app-conditions',
@@ -14,10 +15,10 @@ export class ConditionsComponent implements OnInit {
 
   conditions: Conditions;
   minValueFollowerRange = 0;
-  maxValueFollowerRange = 2000000;
+  maxValueFollowerRange = 200000;
   optionsFollowerRange: Options = {
     floor: 0,
-    ceil: 2000000,
+    ceil: 200000,
     step: 10
   };
   minValueTweetsCount = 0;
@@ -40,19 +41,24 @@ export class ConditionsComponent implements OnInit {
   }
 
   saveAndRoute(): void {
-    if(this.conditions.tweetLanguages.length === 0){
+    if (this.conditions.tweetLanguages.length === 0) {
       this.conditions.tweetLanguages.push(LanguageType.DE.shortForm);
       this.conditions.tweetLanguages.push(LanguageType.EN.shortForm);
       this.conditions.tweetLanguages.push(LanguageType.RU.shortForm);
       this.conditions.tweetLanguages.push(LanguageType.ES.shortForm);
     }
+    if (this.conditions.sourceTypes.length === 0) {
+      this.conditions.sourceTypes.push(SourceType.WebClient.name);
+      this.conditions.sourceTypes.push(SourceType.Android.name);
+      this.conditions.sourceTypes.push(SourceType.Apple.name);
+    }
     this.conditions.followerRange = [this.minValueFollowerRange, this.maxValueFollowerRange];
     this.conditions.tweetCountRange = [this.minValueTweetsCount, this.maxValueTweetsCount];
     // ensure that there are no undefined values in the created at range.
-    if(this.fromCreatedAt === undefined){
+    if (this.fromCreatedAt === undefined) {
       this.fromCreatedAt = '01/01/1900';
     }
-    if(this.toCreatedAt === undefined) {
+    if (this.toCreatedAt === undefined) {
       this.toCreatedAt = '01/01/2099';
     }
     this.conditions.createdAtRange = [this.fromCreatedAt, this.toCreatedAt];
@@ -68,6 +74,10 @@ export class ConditionsComponent implements OnInit {
 
   addLanguage(lang: string): void {
     this.conditions.tweetLanguages.push(lang);
+  }
+
+  addSourceType(sourceType: string): void {
+    this.conditions.sourceTypes.push(sourceType);
   }
 
 }

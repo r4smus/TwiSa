@@ -3,6 +3,7 @@ import { SelectAttribute } from '../enums/select-attribute';
 export class FormData {
     selectedAttributes: Array<SelectAttribute> = [];
     tweetLanguages: Array<string> = [];
+    sourceTypes: Array<string> = [];
     showMap: boolean;
     followerRange: [number, number];
     tweetCountRange: [number, number];
@@ -14,6 +15,7 @@ export class FormData {
 
 export class Conditions {
     tweetLanguages: Array<string> = [];
+    sourceTypes: Array<string> = [];
     followerRange: [number, number];
     tweetCountRange: [number, number];
     createdAtRange: [string, string];

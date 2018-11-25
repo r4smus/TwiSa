@@ -6,7 +6,8 @@ export class SourceType {
     static readonly Apple = new SourceType(3, 'Twitter for iPhone', 'assets/images/source_types/apple.png');
     static readonly NotFound = new SourceType(4, 'Not Found!', 'assets/images/source_types/not_found.png');
 
-    private constructor(public readonly id: number, public readonly name: string, public readonly imagePath: string) {}
+    private constructor(public readonly id: number, public readonly name: string,
+        public readonly imagePath: string) {}
 
     public static parseEnum(data: string): SourceType {
         return SourceType.AllValues[data];
