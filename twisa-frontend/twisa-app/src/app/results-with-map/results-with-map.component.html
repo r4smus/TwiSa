@@ -2,7 +2,7 @@
 <!-- this creates a google map on the page with the given lat/lng from -->
 <!-- the component as the initial center of the map: -->
 <agm-map [latitude]="initalCenterLatitude" [longitude]="initalCenterLongitude" [zoom]="initalZoom">
-    <agm-marker [latitude]="tweet.latitude" [longitude]="tweet.longitude" *ngFor="let tweet of tweets">
+    <agm-marker [latitude]="getLatitude(tweet)" [longitude]="getLongitude(tweet)" *ngFor="let tweet of tweets">
         <agm-info-window>
             <app-twitter-item [tweet]="tweet"></app-twitter-item>
         </agm-info-window>

@@ -38,6 +38,7 @@ export class ResultsWithMapComponent implements OnInit {
     .then(tweets => this.tweets = tweets
     .filter(tweet => this.formDataService.getConditions().tweetLanguages.includes(tweet.lang))
     .filter(tweet => this.formDataService.getConditions().sourceTypes.includes(this.getSourceType(tweet.source).name))
+    .filter(tweet => tweet.coordinates != null)
     .filter(tweet => tweet.user.followers_count >= minFollower  && tweet.user.followers_count <= maxFollower)
     .filter(tweet => tweet.user.statuses_count  >= minTweetsCount && tweet.user.statuses_count <= maxTweetsCount)
     .filter(tweet => new Date(tweet.user.created_at)  >= fromCreatedAt && new Date(tweet.user.created_at) <= toCreatedAt)
@@ -58,4 +59,21 @@ getSourceType(source: string): SourceType {
         return SourceType.NotFound;
     }
   }
+
+getLongitude(tweet: Tweet): number {
+    if(tweet.coordinates !== null && tweet.coordinates !== undefined){
+        return tweet.coordinates.coordinates[0];
+    } else {
+        return undefined;
+    }
+}
+
+getLatitude(tweet: Tweet): number {
+    if(tweet.coordinates !== null && tweet.coordinates !== undefined){
+        return tweet.coordinates.coordinates[1];
+    } else {
+        return undefined;
+    }
+}
+
 }
