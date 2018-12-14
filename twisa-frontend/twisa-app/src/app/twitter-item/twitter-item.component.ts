@@ -5,6 +5,8 @@ import { SourceType } from '../enums/source-type';
 import { LanguageType } from '../enums/language-type';
 import { SelectAttribute } from '../enums/select-attribute';
 import { Tweet } from '../tweet';
+import { Hashtags } from '../hashtags/hashtags';
+import { forEach } from '@angular/router/src/utils/collection';
 
 @Component({
   selector: 'app-twitter-item',
@@ -72,11 +74,21 @@ export class TwitterItemComponent implements OnInit {
     }
   }
 
-  displayHashtag(hashtag: string): string {
-      if (hashtag === undefined || hashtag === null) {
+  displayHashtag(hashtags: Hashtags[]): string {
+      if (hashtags === undefined || hashtags === null) {
           return '';
       } else {
-          return '#' + hashtag;
+          let hashtagsString = '';
+          for (let hashtag of hashtags) {
+              
+              hashtagsString += '#'+hashtag.text;
+              // when it is not the last hashtag, then add a comma
+              if(hashtags.indexOf(hashtag) != hashtags.length-1){
+                  hashtagsString += ', ';
+              }
+              
+          }
+          return hashtagsString;
       }
   }
 

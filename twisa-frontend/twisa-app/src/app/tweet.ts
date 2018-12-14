@@ -1,5 +1,6 @@
 import { User } from './user';
 import { Coordinates } from './coordinates';
+import { Entities } from './hashtags/entities';
 
 export class Tweet {
     public id: number;
@@ -8,6 +9,6 @@ export class Tweet {
     public user: User;
     public coordinates: Coordinates;
     public source: string;
-    public hashtag: string;
+    public entities: Entities;
 
 }

@@ -50,15 +50,15 @@
             <div [hidden]="!showLanguage" class="label-entry">Language:</div>
             <div [hidden]="!showSource" class="label-entry">Source:</div>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-2">
             <div [hidden]="!showLanguage" class="value-entry"><img title="{{getLanguageType(tweet.lang).name}}" src="{{getLanguageType(tweet.lang).imagePath}}"></div>
             <div [hidden]="!showSource" class="value-entry"><img title="{{getSourceType(tweet.source).name}}" src="{{getSourceType(tweet.source).imagePath}}"></div>
         </div>
         <div class="col-sm-2">
-            <div [hidden]="!showHashtag" class="label-entry">Hashtag:</div>
+            <div [hidden]="!showHashtag" class="label-entry">Hashtags:</div>
         </div>
-        <div class="col-sm-4">
-            <div [hidden]="!showHashtag" class="value-entry">{{displayHashtag(tweet.hashtag)}}</div>
+        <div class="col-sm-6 pagedY">
+            <div [hidden]="!showHashtag" class="value-entry">{{displayHashtag(tweet.entities.hashtags)}}</div>
         </div>
     </div>
 </div>
