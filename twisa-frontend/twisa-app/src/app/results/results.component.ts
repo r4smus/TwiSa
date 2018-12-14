@@ -3,6 +3,7 @@ import { FormDataService } from '../data/form-data.service';
 import { TwisaApiService } from '../twisa-api.service';
 import { Tweet } from '../tweet';
 import { SourceType } from '../enums/source-type';
+import { Hashtags } from '../hashtags/hashtags';
 
 
 @Component({
@@ -41,7 +42,7 @@ export class ResultsComponent implements OnInit  {
         // tslint:disable-next-line:max-line-length
         .filter(tweet => (this.formDataService.getConditions().userName === undefined || this.formDataService.getConditions().userName === '') && true || tweet.user.name.includes(this.formDataService.getConditions().userName))
         // tslint:disable-next-line:max-line-length
-        .filter(tweet => (this.formDataService.getConditions().hashtag === '#' || this.formDataService.getConditions().hashtag === '') && true || this.formDataService.getConditions().hashtag === '#' + tweet.hashtag));
+        .filter(tweet => (this.formDataService.getConditions().hashtag === '#' || this.formDataService.getConditions().hashtag === '') && true || this.includesHashtag(tweet.entities.hashtags)));
     }
 
     getSourceType(source: string): SourceType {
@@ -55,4 +56,18 @@ export class ResultsComponent implements OnInit  {
             return SourceType.NotFound;
         }
       }
+
+    includesHashtag(hashtags: Hashtags[]): boolean {
+        if (hashtags === undefined || hashtags === null) {
+            return false;
+        } else {
+            const searchedHashtag = this.formDataService.getConditions().hashtag;
+            for (let hashtag of hashtags) {
+                if('#' +hashtag.text === searchedHashtag){
+                    return true;
+                }
+            }
+            return false;
+        }
+    }
 }
