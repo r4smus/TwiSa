@@ -19,6 +19,7 @@ import { AgmCoreModule} from '@agm/core';
 import {NgxToggleModule} from 'ngx-toggle';
 import { Ng5SliderModule } from 'ng5-slider';
 import { TwitterItemComponent } from './twitter-item/twitter-item.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { TwitterItemComponent } from './twitter-item/twitter-item.component';
     FormsModule,
     NgxToggleModule,
     Ng5SliderModule,
+    NgxPaginationModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyA3UAF3Lhv-VoF29P4FhBgklVkc4VLD0vU'
     })

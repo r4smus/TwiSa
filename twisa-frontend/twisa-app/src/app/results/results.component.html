@@ -1,10 +1,13 @@
 <h3>{{tweets.length}} Tweets</h3>
 <div class="centerRow">
     <ul class="list-group">
-        <li class="list-group-item" *ngFor="let tweet of tweets">
+        <li class="list-group-item" *ngFor="let tweet of tweets | paginate: { itemsPerPage: 5, currentPage: p }">
             <app-twitter-item [tweet]="tweet"></app-twitter-item>
         </li>
     </ul>
+</div>
+<div class="centerRow">
+    <pagination-controls (pageChange)="p = $event" class="pageControls"></pagination-controls>
 </div>
 <nav class="centerRow">
     <ul>

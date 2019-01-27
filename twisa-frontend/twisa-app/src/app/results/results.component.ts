@@ -13,6 +13,7 @@ import { Hashtags } from '../hashtags/hashtags';
 })
 export class ResultsComponent implements OnInit  {
 
+    p: number = 1;
     tweets: Tweet[];
 
     constructor(private formDataService: FormDataService, private twisaApiService: TwisaApiService ) { }

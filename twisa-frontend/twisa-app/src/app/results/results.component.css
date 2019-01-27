@@ -1,1 +1,3 @@
-
+.pageControls /deep/ .ngx-pagination .current {
+    background:  #B94A48;
+}
